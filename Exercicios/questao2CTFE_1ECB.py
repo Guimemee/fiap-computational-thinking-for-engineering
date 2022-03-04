@@ -1,0 +1,14 @@
+valor_gasolinaA = float(input("Valor da gasolina tipo A por litro: R$ "))
+valor_etanol_anidro = float(input("Valor do etanol anidro por litro: R$ "))
+valor_gasolinaC = valor_gasolinaA * 0.73 + valor_etanol_anidro * 0.27
+valor_distribuidora = valor_gasolinaC * 0.05
+valor_tributos_federais = (valor_gasolinaC + valor_distribuidora) * 0.2
+custos_lucros = (valor_gasolinaC + valor_distribuidora + valor_tributos_federais) * 0.15
+icms = (valor_gasolinaC + valor_distribuidora + valor_tributos_federais + custos_lucros) * 0.25
+valor_gasolina_final= valor_gasolinaC + valor_distribuidora + valor_tributos_federais + custos_lucros + icms
+print("\nValor da gasolina C = R$ %.2f" %valor_gasolinaC)
+print("Valor cobrado pela distribuidora responsável pela mistura = R$ %.2f" %valor_distribuidora)
+print(("Valor total dos tributos federais (CIDE, PIS/PASEP e COFINS) = R$ %.2f" %valor_tributos_federais))
+print(("Valor do ICMS = R$ %.2f" %icms))
+print("Valor dos custos e lucros de distribuição e revenda = R$ %.2f" %custos_lucros)
+print("Valor final da gasolina que chega no posto = R$ %.2f" %valor_gasolina_final)

@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="155" viewBox="0 0 940 155" fill="none">
+    <style>
+        .bg { fill: #0d1117; stroke: #30363d; stroke-width: 1; rx: 6px; }
+        .tech-box { fill: #161b22; stroke: #30363d; stroke-width: 1; rx: 6px; }
+        .tech-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; fill: #f0f6fc; text-anchor: middle; letter-spacing: 0.5px; }
+        .badge-text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 700; fill: #ffffff; text-anchor: middle; letter-spacing: 0.5px; }
+        .sub-header { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 600; fill: #58a6ff; }
+        .icon-blue { fill: #58a6ff; }
+    </style>
+    <rect width="938" height="153" x="1" y="1" class="bg"/>
+
+    <!-- Header inside card -->
+    <g transform="translate(24, 18)">
+        <svg viewBox="0 0 16 16" width="14" height="14" class="icon-blue" x="0" y="0">
+            <path fill-rule="evenodd" d="M11.93 8.5a4.002 4.002 0 01-7.86 0H.75a.75.75 0 010-1.5h3.32a4.002 4.002 0 017.86 0h3.32a.75.75 0 010 1.5h-3.32zM8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"/>
+        </svg>
+        <text x="20" y="11" class="sub-header">Stack Tecnológica &amp; Microcontroladores • Engenharia da Computação 1ECR</text>
+    </g>
+
+    <!-- 5 Technology Columns -->
+
+    <!-- 1. PYTHON -->
+    <g transform="translate(24, 38)">
+        <rect width="168" height="102" class="tech-box"/>
+        <g transform="translate(68, 12)">
+            <svg width="32" height="32" viewBox="0 0 110 110" fill="none">
+                <path d="M54.5 5C27.6 5 29.3 16.6 29.3 16.6L29.3 28.7L55.2 28.7L55.2 32.3L18.4 32.3C18.4 32.3 5 30.8 5 57.7C5 84.6 16.8 83.1 16.8 83.1L23.8 83.1L23.8 71.5C23.8 71.5 23.2 57.6 37.3 57.6L63.1 57.6C63.1 57.6 74.8 58 74.8 46.5L74.8 16.6C74.8 16.6 77.2 5 54.5 5ZM44.8 14.1C47.8 14.1 50.3 16.6 50.3 19.6C50.3 22.6 47.8 25.1 44.8 25.1C41.8 25.1 39.3 22.6 39.3 19.6C39.3 16.6 41.8 14.1 44.8 14.1Z" fill="#387EB8"/>
+                <path d="M55.5 105C82.4 105 80.7 93.4 80.7 93.4L80.7 81.3L54.8 81.3L54.8 77.7L91.6 77.7C91.6 77.7 105 79.2 105 52.3C105 25.4 93.2 26.9 93.2 26.9L86.2 26.9L86.2 38.5C86.2 38.5 86.8 52.4 72.7 52.4L46.9 52.4C46.9 52.4 35.2 52 35.2 63.5L35.2 93.4C35.2 93.4 32.8 105 55.5 105ZM65.2 95.9C62.2 95.9 59.7 93.4 59.7 90.4C59.7 87.4 62.2 84.9 65.2 84.9C68.2 84.9 70.7 87.4 70.7 90.4C70.7 93.4 68.2 95.9 65.2 95.9Z" fill="#FFE052"/>
+            </svg>
+        </g>
+        <text x="84" y="62" class="tech-title">PYTHON</text>
+        <rect x="34" y="72" width="100" height="20" rx="10" fill="#3776AB"/>
+        <text x="84" y="86" class="badge-text">3.10+</text>
+    </g>
+
+    <!-- 2. ARDUINO C++ -->
+    <g transform="translate(204, 38)">
+        <rect width="168" height="102" class="tech-box"/>
+        <g transform="translate(68, 12)">
+            <svg width="32" height="32" viewBox="0 0 100 100" fill="none">
+                <circle cx="50" cy="50" r="48" fill="#00979D"/>
+                <path d="M33 38C24.7 38 18 43.4 18 50C18 56.6 24.7 62 33 62C40.6 62 46.8 57.3 47.9 51.5C48 51.1 48 50.9 48 50C48 49.1 48 48.9 47.9 48.5C46.8 42.7 40.6 38 33 38ZM67 38C59.4 38 53.2 42.7 52.1 48.5C52 48.9 52 49.1 52 50C52 50.9 52 51.1 52.1 51.5C53.2 57.3 59.4 62 67 62C75.3 62 82 56.6 82 50C82 43.4 75.3 38 67 38Z" fill="#008184"/>
+                <path d="M26 48H32V42H34V48H40V50H34V56H32V50H26V48ZM61 48H73V50H61V48Z" fill="#FFFFFF"/>
+            </svg>
+        </g>
+        <text x="84" y="62" class="tech-title">ARDUINO</text>
+        <rect x="34" y="72" width="100" height="20" rx="10" fill="#00979D"/>
+        <text x="84" y="86" class="badge-text">C++</text>
+    </g>
+
+    <!-- 3. ESP32 -->
+    <g transform="translate(384, 38)">
+        <rect width="168" height="102" class="tech-box"/>
+        <g transform="translate(68, 12)">
+            <svg width="32" height="32" viewBox="0 0 100 100" fill="none">
+                <rect x="15" y="15" width="70" height="70" rx="8" fill="#E7352C"/>
+                <rect x="25" y="25" width="50" height="50" rx="4" fill="#1C1B1B"/>
+                <circle cx="50" cy="50" r="14" fill="#E7352C"/>
+                <path d="M42 50L48 44V56L42 50ZM58 50L52 44V56L58 50Z" fill="#FFFFFF"/>
+            </svg>
+        </g>
+        <text x="84" y="62" class="tech-title">ESP32</text>
+        <rect x="34" y="72" width="100" height="20" rx="10" fill="#E7352C"/>
+        <text x="84" y="86" class="badge-text">FREERTOS</text>
+    </g>
+
+    <!-- 4. RASPBERRY PI -->
+    <g transform="translate(564, 38)">
+        <rect width="168" height="102" class="tech-box"/>
+        <g transform="translate(68, 12)">
+            <svg width="32" height="32" viewBox="0 0 100 100" fill="none">
+                <circle cx="50" cy="58" r="12" fill="#C51A4A"/>
+                <circle cx="34" cy="50" r="10" fill="#C51A4A"/>
+                <circle cx="66" cy="50" r="10" fill="#C51A4A"/>
+                <circle cx="38" cy="68" r="10" fill="#C51A4A"/>
+                <circle cx="62" cy="68" r="10" fill="#C51A4A"/>
+                <circle cx="50" cy="78" r="9" fill="#C51A4A"/>
+                <path d="M48 24C44 18 36 20 36 20C36 20 40 28 46 29C44 26 46 24 48 24ZM52 24C56 18 64 20 64 20C64 20 60 28 54 29C56 26 54 24 52 24Z" fill="#75A928"/>
+                <path d="M48 30C49 27 51 27 52 30C54 36 50 40 50 40C50 40 46 36 48 30Z" fill="#75A928"/>
+            </svg>
+        </g>
+        <text x="84" y="62" class="tech-title">RASPBERRY PI</text>
+        <rect x="34" y="72" width="100" height="20" rx="10" fill="#C51A4A"/>
+        <text x="84" y="86" class="badge-text">GPIO</text>
+    </g>
+
+    <!-- 5. FIAP ENGENHARIA -->
+    <g transform="translate(744, 38)">
+        <rect width="170" height="102" class="tech-box"/>
+        <g transform="translate(69, 12)">
+            <svg width="32" height="32" viewBox="0 0 100 100" fill="none">
+                <circle cx="50" cy="50" r="48" fill="#ED145B"/>
+                <path d="M50 24L18 40L50 56L82 40L50 24ZM26 49.5V64.5C26 71.5 36.7 77.2 50 77.2C63.3 77.2 74 71.5 74 64.5V49.5L50 61.5L26 49.5Z" fill="#FFFFFF"/>
+                <path d="M82 43V65H78V45L82 43Z" fill="#FFFFFF"/>
+            </svg>
+        </g>
+        <text x="85" y="62" class="tech-title">FIAP</text>
+        <rect x="10" y="72" width="150" height="20" rx="10" fill="#ED145B"/>
+        <text x="85" y="86" class="badge-text" style="font-size: 11.5px;">ENGENHARIA DE COMPUTAÇÃO</text>
+    </g>
+</svg>

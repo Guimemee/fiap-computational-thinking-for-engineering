@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="530" height="215" viewBox="0 0 530 215" fill="none">
+    <style>
+        .bg { fill: #0d1117; stroke: #30363d; stroke-width: 1; rx: 6px; }
+        .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 600; fill: #58a6ff; }
+        .text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; fill: #c9d1d9; }
+        .muted { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; fill: #8b949e; }
+        .bold { font-weight: 600; fill: #58a6ff; }
+        .icon { fill: #8b949e; }
+        .icon-blue { fill: #58a6ff; }
+        .day { rx: 2px; ry: 2px; }
+    </style>
+    <rect width="528" height="213" x="1" y="1" class="bg"/>
+
+    <!-- Avatar / Header -->
+    <g transform="translate(18, 16)">
+        <circle cx="12" cy="12" r="12" fill="#1f6feb"/>
+        <path d="M12 2a10 10 0 00-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02.8-.22 1.65-.33 2.5-.33.85 0 1.7.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0012 2z" fill="#ffffff" transform="scale(0.8) translate(3, 3)"/>
+        
+        <text x="32" y="16" class="title">Guilherme Macario da Silva</text>
+        <text x="32" y="32" class="muted">Bacharelado em Engenharia da Computação • FIAP</text>
+    </g>
+
+    <!-- Joined GitHub & Streak -->
+    <g transform="translate(18, 64)">
+        <svg viewBox="0 0 16 16" width="14" height="14" class="icon" x="0" y="0">
+            <path fill-rule="evenodd" d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.5 4.75a.75.75 0 00-1.5 0v3.5a.75.75 0 00.471.696l2.5 1a.75.75 0 00.557-1.392L8.5 7.742V4.75z"/>
+        </svg>
+        <text x="20" y="11" class="text">Joined GitHub Feb/2019</text>
+
+        <!-- Contribution streak squares -->
+        <g transform="translate(230, 0)">
+            <rect class="day" x="0" y="2" width="10" height="10" fill="#ebedf0"/>
+            <rect class="day" x="13" y="2" width="10" height="10" fill="#ebedf0"/>
+            <rect class="day" x="26" y="2" width="10" height="10" fill="#40c463"/>
+            <rect class="day" x="39" y="2" width="10" height="10" fill="#40c463"/>
+            <rect class="day" x="52" y="2" width="10" height="10" fill="#30a14e"/>
+            <rect class="day" x="65" y="2" width="10" height="10" fill="#216e39"/>
+            <rect class="day" x="78" y="2" width="10" height="10" fill="#40c463"/>
+            <rect class="day" x="91" y="2" width="10" height="10" fill="#30a14e"/>
+            <rect class="day" x="104" y="2" width="10" height="10" fill="#216e39"/>
+            <rect class="day" x="117" y="2" width="10" height="10" fill="#ebedf0"/>
+            <rect class="day" x="130" y="2" width="10" height="10" fill="#ebedf0"/>
+            <rect class="day" x="143" y="2" width="10" height="10" fill="#40c463"/>
+            <rect class="day" x="156" y="2" width="10" height="10" fill="#216e39"/>
+            <rect class="day" x="169" y="2" width="10" height="10" fill="#ebedf0"/>
+        </g>
+    </g>
+
+    <!-- Details -->
+    <g transform="translate(18, 96)">
+        <svg viewBox="0 0 16 16" width="14" height="14" class="icon-blue" x="0" y="2">
+            <path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/>
+        </svg>
+        <text x="20" y="14" class="title" style="font-size: 16px;">50 Repositories</text>
+
+        <g transform="translate(230, 2)">
+            <svg viewBox="0 0 16 16" width="14" height="14" class="icon" x="0" y="0">
+                <path fill-rule="evenodd" d="M1 2.5A2.5 2.5 0 013.5 0h8.75a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0V1.5h-8a1 1 0 00-1 1v6.708A2.492 2.492 0 013.5 9h3.25a.75.75 0 010 1.5H3.5a1 1 0 100 2h5.75a.75.75 0 010 1.5H3.5A2.5 2.5 0 011 11.5v-9zm13.23 7.79a.75.75 0 001.06-1.06l-2.505-2.505a.75.75 0 00-1.06 0L9.22 9.229a.75.75 0 001.06 1.061l1.225-1.224v6.184a.75.75 0 001.5 0V9.066l1.224 1.224z"/>
+            </svg>
+            <text x="20" y="11" class="text">Contributed to 50 repositories</text>
+        </g>
+
+        <g transform="translate(0, 24)">
+            <svg viewBox="0 0 16 16" width="14" height="14" class="icon" x="0" y="2">
+                <path fill-rule="evenodd" d="M8.75.75a.75.75 0 00-1.5 0V2h-.984c-.305 0-.604.08-.869.23l-1.288.737A.25.25 0 013.984 3H1.75a.75.75 0 000 1.5h.428L.066 9.192a.75.75 0 00.154.838l.53-.53-.53.53v.001l.002.002.002.002.006.006.016.015.045.04a3.514 3.514 0 00.686.45A4.492 4.492 0 003 11c.88 0 1.556-.22 2.023-.454a3.515 3.515 0 00.686-.45l.045-.04.016-.015.006-.006.002-.002.001-.002L5.25 9.5l.53.53a.75.75 0 00.154-.838L3.822 4.5h.162c.305 0 .604-.08.869-.23l1.289-.737a.25.25 0 01.124-.033h.984V13h-2.5a.75.75 0 000 1.5h6.5a.75.75 0 000-1.5h-2.5V3.5h.984a.25.25 0 01.124.033l1.29.736c.264.152.563.231.868.231h.162l-2.112 4.692a.75.75 0 00.154.838l.53-.53-.53.53v.001l.002.002.002.002.006.006.016.015.045.04a3.517 3.517 0 00.686.45A4.492 4.492 0 0013 11c.88 0 1.556-.22 2.023-.454a3.512 3.512 0 00.686-.45l.045-.04.01-.01.006-.005.006-.006.002-.002.001-.002-.529-.531.53.53a.75.75 0 00.154-.838L13.823 4.5h.427a.75.75 0 000-1.5h-2.234a.25.25 0 01-.124-.033l-1.29-.736A1.75 1.75 0 009.735 2H8.75V.75z"/>
+            </svg>
+            <text x="20" y="13" class="text">Turma: 1ECR (Ano Letivo 2022)</text>
+        </g>
+        <g transform="translate(230, 24)">
+            <svg viewBox="0 0 16 16" width="14" height="14" class="icon" x="0" y="2">
+                <path fill-rule="evenodd" d="M4.25 2.5c-1.336 0-2.75 1.164-2.75 3 0 2.15 1.58 4.144 3.374 5.678l2.726 2.327a.75.75 0 00.95 0l2.726-2.327C12.92 9.644 14.5 7.65 14.5 5.5c0-1.836-1.414-3-2.75-3-1.373 0-2.609.986-3.029 2.456a.75.75 0 01-1.442 0C6.859 3.486 5.623 2.5 4.25 2.5z"/>
+            </svg>
+            <text x="20" y="13" class="text">8 Sponsors</text>
+        </g>
+
+        <g transform="translate(0, 44)">
+            <svg viewBox="0 0 16 16" width="14" height="14" class="icon" x="0" y="2">
+                <path fill-rule="evenodd" d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z"/>
+            </svg>
+            <text x="20" y="13" class="text">106 Códigos-Fonte CTE</text>
+        </g>
+        <g transform="translate(230, 44)">
+            <svg viewBox="0 0 16 16" width="14" height="14" class="icon" x="0" y="2">
+                <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"/>
+            </svg>
+            <text x="20" y="13" class="text">3.113 Linhas de Código</text>
+        </g>
+
+        <g transform="translate(0, 64)">
+            <svg viewBox="0 0 16 16" width="14" height="14" class="icon" x="0" y="2">
+                <path fill-rule="evenodd" d="M3 5c0-.828 2.239-1.5 5-1.5s5 .672 5 1.5-2.239 1.5-5 1.5-5-.672-5-1.5zm0 3c0-.828 2.239-1.5 5-1.5s5 .672 5 1.5-2.239 1.5-5 1.5-5-.672-5-1.5zm0 3c0-.828 2.239-1.5 5-1.5s5 .672 5 1.5-2.239 1.5-5 1.5-5-.672-5-1.5z"/>
+            </svg>
+            <text x="20" y="13" class="text">96.1 kB de volume total</text>
+        </g>
+        <g transform="translate(230, 64)">
+            <svg viewBox="0 0 16 16" width="14" height="14" class="icon" x="0" y="2">
+                <path fill-rule="evenodd" d="M8 1.5c-4.478 0-8 3.522-8 8s3.522 8 8 8 8-3.522 8-8-3.522-8-8-8zm0 13.5c-3.033 0-5.5-2.467-5.5-5.5S4.967 4 8 4s5.5 2.467 5.5 5.5-2.467 5.5-5.5 5.5zM8 6.5a3 3 0 100 6 3 3 0 000-6z"/>
+            </svg>
+            <text x="20" y="13" class="text">2 Linguagens (Python &amp; C++)</text>
+        </g>
+    </g>
+</svg>
