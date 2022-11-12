@@ -1,0 +1,26 @@
+Caminhão + R$ 8,90:
+Caminhão - BYD eT7 11.200 Delivery
+Caminhão - BYD eT8F Multivocacional
+Caminhão - JAC iEV 1200T
+
+Furgão + R$ 7,90:
+Furgão - BYD eT3 e-Delivery
+Furgão - Renault Kangoo ZE Maxi
+
+Picape + R$ 6,90:
+Picape - JAC iEV 330
+
+SUV + R$ 5,90:
+SUV - Audi E-tron i
+SUV - JAC IEV 40
+SUV - Jaguar iPace
+
+Hatchback + R$ 4,90:
+Hatchback - BMW i3 
+Hatchback - JAC IEV 20
+Hatchback - Nissan Leaf
+Hatchback - Renault Zoe
+
+Sedan + R$ 3,90:
+Sedan - Chery Arrizo 5e
+
