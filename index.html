@@ -2,324 +2,1482 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>FIAP • Engenharia da Computação — Portfólio Oficial (CTE 2022)</title>
   <link rel="icon" href="https://github.githubassets.com/favicons/favicon.png" type="image/png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.5.1/github-markdown-dark.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      background-color: #0d1117;
-      color: #c9d1d9;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    :root {
+      --bg-dark: #0d1117;
+      --bg-card: #161b22;
+      --bg-header: #21262d;
+      --border-color: #30363d;
+      --border-accent: rgba(88, 166, 255, 0.4);
+      --text-main: #c9d1d9;
+      --text-muted: #8b949e;
+      --accent-blue: #58a6ff;
+      --accent-green: #238636;
+      --accent-green-bright: #3fb950;
+      --accent-cyan: #39c5bb;
+      --accent-purple: #bc8cff;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1000px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(88, 166, 255, 0.08) 0%, rgba(35, 134, 54, 0.04) 40%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ========================================== */
+    /* 1. NAVBAR SUPERIOR RESPONSIVA              */
+    /* ========================================== */
     .site-header {
-      background: #161b22;
-      border-bottom: 1px solid #30363d;
-      padding: 16px 24px;
+      background: rgba(22, 27, 34, 0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-color);
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
+      padding: 10px 0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+    }
+
+    .header-inner {
+      max-width: 1400px;
+      width: 94%;
+      margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      gap: 16px;
     }
-    .site-brand {
+
+    .brand-container {
       display: flex;
       align-items: center;
       gap: 12px;
-      font-weight: 700;
-      font-size: 1.15rem;
-      color: #58a6ff;
       text-decoration: none;
+      min-width: 0;
     }
-    .site-brand:hover {
-      color: #79c0ff;
-    }
-    .site-brand i {
-      font-size: 1.4rem;
-    }
-    .header-actions {
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #1f6feb, #238636);
+      border-radius: var(--radius-md);
       display: flex;
-      gap: 12px;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+      box-shadow: 0 2px 10px rgba(31, 111, 235, 0.4);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+    }
+
+    /* Linha 1: Título completo, nunca truncado */
+    .brand-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #ffffff;
+      white-space: nowrap;
+      line-height: 1.25;
+    }
+
+    /* Linha 2: Turma 1ECR 2022 + Botão Ver Repositório do mesmo tamanho */
+    .brand-subrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .brand-badge {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--accent-blue);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      line-height: 1;
+    }
+
+    /* Botão Ver Repositório na linha 2, com a mesma fonte */
+    .btn-repo-sub {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: #238636;
+      color: #ffffff;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      text-decoration: none;
+      line-height: 1;
+      transition: all 0.2s ease;
+      box-shadow: 0 1px 4px rgba(35, 134, 54, 0.3);
+    }
+
+    .btn-repo-sub:hover {
+      background: #2ea043;
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(46, 160, 67, 0.4);
+    }
+
+    .header-nav {
+      display: flex;
+      gap: 6px;
       align-items: center;
     }
-    .btn-github {
+
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      transition: all 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    /* ========================================== */
+    /* 2. HERO BANNER ESTATÍSTICO                 */
+    /* ========================================== */
+    .hero-section {
+      text-align: center;
+      padding: 44px 16px 28px 16px;
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: #238636;
+      padding: 6px 16px;
+      background: rgba(88, 166, 255, 0.1);
+      border: 1px solid rgba(88, 166, 255, 0.25);
+      border-radius: 50px;
+      color: var(--accent-blue);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 18px;
+    }
+
+    .hero-title {
+      font-size: clamp(1.8rem, 3.8vw, 2.75rem);
+      font-weight: 800;
       color: #ffffff;
-      padding: 8px 16px;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.1s;
+      letter-spacing: -0.5px;
+      line-height: 1.25;
+      margin-bottom: 14px;
+      background: linear-gradient(180deg, #ffffff 0%, #d2d8e0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-    .btn-github:hover {
-      background: #2ea043;
-      transform: translateY(-1px);
-    }
-    .main-container {
-      max-width: 1040px;
-      margin: 0 auto;
-      padding: 32px 20px 80px 20px;
-    }
-    .markdown-body {
-      background: transparent !important;
-      font-size: 15px;
+
+    .hero-subtitle {
+      font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+      color: var(--text-muted);
+      max-width: 820px;
+      margin: 0 auto 24px auto;
       line-height: 1.6;
     }
-    .markdown-body table {
-      display: table !important;
-      width: 100% !important;
-      margin-left: auto;
-      margin-right: auto;
-      border-collapse: collapse;
+
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 24px;
     }
+
+    .stat-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 8px 16px;
+      border-radius: var(--radius-md);
+      font-size: 0.88rem;
+      color: var(--text-main);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .stat-pill b {
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .stat-pill i {
+      color: var(--accent-blue);
+    }
+
+    .stat-verified {
+      border-color: rgba(63, 185, 80, 0.4);
+      background: rgba(35, 134, 54, 0.12);
+    }
+
+    .stat-verified i {
+      color: var(--accent-green-bright);
+    }
+
+    /* Barra de Busca e Filtro Rápido */
+    .search-box-wrap {
+      max-width: 620px;
+      margin: 0 auto 12px auto;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      background: #161b22;
+      border: 1px solid var(--border-color);
+      color: #ffffff;
+      padding: 12px 18px 12px 42px;
+      border-radius: 50px;
+      font-size: 0.92rem;
+      outline: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    }
+
+    .search-input:focus {
+      border-color: var(--accent-blue);
+      box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.25);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 1rem;
+      pointer-events: none;
+    }
+
+    /* ========================================== */
+    /* 3. CONTAINER PRINCIPAL E SEÇÕES            */
+    /* ========================================== */
+    .main-container {
+      max-width: 1400px;
+      width: 94%;
+      margin: 0 auto;
+      padding: 0 0 100px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .dashboard-section {
+      margin-bottom: 40px;
+    }
+
+    .section-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .section-icon-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      background: rgba(88, 166, 255, 0.12);
+      border: 1px solid rgba(88, 166, 255, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-blue);
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .section-icon-badge.gs-badge {
+      background: rgba(57, 197, 187, 0.12);
+      border-color: rgba(57, 197, 187, 0.3);
+      color: var(--accent-cyan);
+    }
+
+    .section-icon-badge.sprint-badge {
+      background: rgba(188, 140, 255, 0.12);
+      border-color: rgba(188, 140, 255, 0.3);
+      color: var(--accent-purple);
+    }
+
+    .section-icon-badge.eval-badge-icon {
+      background: rgba(230, 167, 0, 0.12);
+      border-color: rgba(230, 167, 0, 0.3);
+      color: #f1b722;
+    }
+
+    .section-icon-badge.ex-badge {
+      background: rgba(63, 185, 80, 0.12);
+      border-color: rgba(63, 185, 80, 0.3);
+      color: var(--accent-green-bright);
+    }
+
+    .section-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.3;
+    }
+
+    .section-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* ========================================== */
+    /* 4. DASHBOARD DE CARDS & MÉTRICAS (GRID)    */
+    /* ========================================== */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .metric-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .metric-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--border-accent);
+      box-shadow: 0 6px 24px rgba(88, 166, 255, 0.15);
+    }
+
+    .metric-card-full {
+      grid-column: 1 / -1;
+    }
+
+    .metric-card-header {
+      background: var(--bg-header);
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #e6edf3;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 0;
+    }
+
+    .header-left span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .metric-card-header i {
+      color: var(--accent-blue);
+      flex-shrink: 0;
+    }
+
+    .card-pill {
+      font-size: 0.72rem;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 2px 8px;
+      border-radius: 12px;
+      color: var(--text-muted);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .metric-card-body {
+      padding: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #090d12;
+      flex-grow: 1;
+    }
+
+    .metric-card-body a {
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+
+    .metric-img {
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      display: block;
+      margin: 0 auto;
+      border-radius: var(--radius-sm);
+    }
+
+    .metric-tech-img {
+      max-width: 980px;
+    }
+
+    /* ========================================== */
+    /* 5. HUBS DE NAVEGAÇÃO INTERATIVA            */
+    /* ========================================== */
+    .hub-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .hub-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .hub-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      text-decoration: none;
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hub-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent-blue);
+      box-shadow: 0 8px 28px rgba(88, 166, 255, 0.16);
+    }
+
+    .hub-card-gs:hover {
+      border-color: var(--accent-cyan);
+      box-shadow: 0 8px 28px rgba(57, 197, 187, 0.18);
+    }
+
+    .hub-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .hub-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(57, 197, 187, 0.12);
+      color: var(--accent-cyan);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .hub-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-muted);
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+    }
+
+    .hub-card-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 8px;
+      line-height: 1.35;
+    }
+
+    .hub-card-text {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 18px;
+      flex-grow: 1;
+    }
+
+    .hub-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--accent-blue);
+      padding-top: 12px;
+      border-top: 1px solid rgba(48, 54, 61, 0.6);
+    }
+
+    .hub-card-sprint {
+      padding: 18px;
+    }
+
+    .sprint-step-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent-purple);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .sprint-card-title {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+
+    .sprint-card-text {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+      margin-bottom: 12px;
+      flex-grow: 1;
+    }
+
+    .sprint-card-link {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--accent-blue);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Hub Painéis (Avaliações e Exercícios) */
+    .hub-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hub-panel-header {
+      padding: 14px 18px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .hub-panel-header.py-header {
+      background: rgba(56, 139, 253, 0.12);
+      border-bottom-color: rgba(56, 139, 253, 0.3);
+    }
+
+    .hub-panel-header.py-header i {
+      color: #388bfd;
+      font-size: 1.15rem;
+    }
+
+    .hub-panel-header.ard-header {
+      background: rgba(57, 197, 187, 0.12);
+      border-bottom-color: rgba(57, 197, 187, 0.3);
+    }
+
+    .hub-panel-header.ard-header i {
+      color: #39c5bb;
+      font-size: 1.15rem;
+    }
+
+    .hub-panel-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hub-list-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 18px;
+      border-bottom: 1px solid rgba(48, 54, 61, 0.5);
+      text-decoration: none;
+      color: var(--text-main);
+      font-size: 0.88rem;
+      transition: all 0.15s ease;
+    }
+
+    .hub-list-item:last-child {
+      border-bottom: none;
+    }
+
+    .hub-list-item:hover {
+      background: rgba(255, 255, 255, 0.04);
+      color: #ffffff;
+      padding-left: 22px;
+    }
+
+    .item-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      background: rgba(56, 139, 253, 0.18);
+      color: #58a6ff;
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+      white-space: nowrap;
+    }
+
+    .item-badge.ard-badge {
+      background: rgba(57, 197, 187, 0.18);
+      color: #39c5bb;
+    }
+
+    .item-title {
+      flex-grow: 1;
+      font-weight: 500;
+      line-height: 1.35;
+    }
+
+    .hub-list-item i {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      transition: transform 0.2s;
+    }
+
+    .hub-list-item:hover i {
+      color: var(--accent-blue);
+      transform: translateX(3px);
+    }
+
+    .hub-divider {
+      border: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-color) 20%, var(--border-color) 80%, transparent);
+      margin: 48px 0;
+    }
+
+    /* ========================================== */
+    /* 6. CORPO MARKDOWN TÉCNICO ENRIQUECIDO      */
+    /* ========================================== */
+    .markdown-body {
+      background: transparent !important;
+      font-family: inherit !important;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text-main) !important;
+    }
+
+    .markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4 {
+      color: #ffffff !important;
+      font-weight: 700;
+      border-bottom-color: var(--border-color) !important;
+    }
+
+    .markdown-body h2 {
+      font-size: 1.55rem;
+      margin-top: 48px !important;
+      margin-bottom: 20px !important;
+      padding-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .markdown-body h3 {
+      font-size: 1.25rem;
+      margin-top: 36px !important;
+      margin-bottom: 16px !important;
+      color: var(--accent-blue) !important;
+    }
+
+    .markdown-body blockquote {
+      border-left: 4px solid var(--accent-blue) !important;
+      background: rgba(22, 27, 34, 0.7) !important;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 14px 20px !important;
+      margin: 16px 0 !important;
+      color: #e6edf3 !important;
+      font-size: 0.95rem;
+    }
+
+    .code-wrapper {
+      position: relative;
+      margin: 16px 0;
+    }
+
+    .markdown-body pre {
+      background: #090d12 !important;
+      border: 1px solid var(--border-color) !important;
+      border-radius: var(--radius-md) !important;
+      padding: 20px !important;
+      font-family: 'JetBrains Mono', monospace !important;
+      font-size: 14px !important;
+      box-shadow: inset 0 2px 8px rgba(0,0,0,0.4);
+      position: relative;
+      overflow-x: auto;
+    }
+
+    .btn-copy-code {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(33, 38, 45, 0.85);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      border-radius: var(--radius-sm);
+      padding: 4px 10px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      z-index: 10;
+    }
+
+    .btn-copy-code:hover {
+      background: var(--accent-blue);
+      color: #ffffff;
+      border-color: var(--accent-blue);
+    }
+
+    .btn-copy-code.copied {
+      background: var(--accent-green);
+      color: #ffffff;
+      border-color: var(--accent-green);
+    }
+
     .markdown-body img {
       max-width: 100%;
       height: auto;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-md);
+      background: #0d1117;
+      margin: 16px auto;
       display: block;
-      margin: 0 auto;
     }
-    .markdown-body th, .markdown-body td {
-      border: 1px solid #30363d !important;
+
+    .markdown-body table {
+      width: 100% !important;
+      border-collapse: collapse !important;
+      margin: 20px 0 !important;
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-color) !important;
     }
+
+    .markdown-body th {
+      background: var(--bg-header) !important;
+      color: #ffffff !important;
+      font-weight: 600 !important;
+      padding: 12px 16px !important;
+      border: 1px solid var(--border-color) !important;
+    }
+
+    .markdown-body td {
+      padding: 12px 16px !important;
+      border: 1px solid var(--border-color) !important;
+    }
+
+    .markdown-body a {
+      color: var(--accent-blue) !important;
+      text-decoration: none;
+    }
+
+    .markdown-body a:hover {
+      text-decoration: underline;
+    }
+
     .back-to-top {
       position: fixed;
       bottom: 24px;
       right: 24px;
-      background: #21262d;
-      color: #c9d1d9;
-      border: 1px solid #30363d;
-      width: 44px;
-      height: 44px;
+      background: rgba(33, 38, 45, 0.9);
+      backdrop-filter: blur(8px);
+      color: #ffffff;
+      border: 1px solid var(--border-color);
+      width: 46px;
+      height: 46px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       text-decoration: none;
       font-size: 1.1rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-      transition: all 0.2s;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.6);
+      transition: all 0.25s ease;
+      z-index: 900;
     }
+
     .back-to-top:hover {
-      background: #30363d;
-      color: #58a6ff;
-      transform: translateY(-2px);
+      background: var(--accent-blue);
+      border-color: var(--accent-blue);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(88, 166, 255, 0.4);
     }
+
     footer {
-      background: #161b22;
-      border-top: 1px solid #30363d;
-      padding: 32px 20px;
+      background: #090d12;
+      border-top: 1px solid var(--border-color);
+      padding: 40px 20px;
       text-align: center;
-      font-size: 0.85rem;
-      color: #8b949e;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      position: relative;
+      z-index: 1;
     }
+
+    footer p {
+      margin-bottom: 8px;
+    }
+
     footer a {
-      color: #58a6ff;
+      color: var(--accent-blue);
       text-decoration: none;
+      font-weight: 600;
     }
+
     footer a:hover {
       text-decoration: underline;
+    }
+
+    /* ========================================== */
+    /* 7. REGRAS RESPONSIVAS MOBILE (ADAPTATIVO)  */
+    /* ========================================== */
+    @media (max-width: 991px) {
+      .header-nav {
+        display: none;
+      }
+
+      .metrics-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .hub-grid-2 {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .hub-grid-4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .hero-title {
+        font-size: 1.95rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .site-header {
+        padding: 10px 0;
+      }
+
+      .header-inner {
+        width: 92%;
+      }
+
+      .brand-title {
+        font-size: 0.95rem;
+      }
+
+      .brand-badge {
+        font-size: 0.72rem;
+      }
+
+      .btn-repo-sub {
+        font-size: 0.72rem;
+        padding: 2px 7px;
+      }
+
+      .brand-logo {
+        width: 36px;
+        height: 36px;
+        font-size: 1.1rem;
+      }
+
+      .hero-section {
+        padding: 28px 12px 18px 12px;
+      }
+
+      .hero-badge {
+        font-size: 0.7rem;
+        padding: 5px 12px;
+        margin-bottom: 14px;
+      }
+
+      .hero-title {
+        font-size: 1.55rem;
+      }
+
+      .hero-subtitle {
+        font-size: 0.88rem;
+        margin-bottom: 18px;
+      }
+
+      .hero-stats {
+        gap: 8px;
+        margin-bottom: 18px;
+      }
+
+      .stat-pill {
+        padding: 6px 12px;
+        font-size: 0.78rem;
+      }
+
+      .hub-grid-4 {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        font-size: 1.15rem;
+      }
+
+      .metric-card-header {
+        font-size: 0.8rem;
+        padding: 8px 12px;
+      }
+
+      .metric-card-body {
+        padding: 8px;
+      }
+
+      .hub-list-item {
+        padding: 10px 12px;
+        font-size: 0.82rem;
+      }
+
+      .markdown-body pre {
+        padding: 14px !important;
+        font-size: 12.5px !important;
+      }
+
+      .markdown-body h2 {
+        font-size: 1.3rem;
+      }
+
+      .markdown-body h3 {
+        font-size: 1.1rem;
+      }
     }
   </style>
 </head>
 <body>
+  <!-- HEADER STICKY -->
   <header class="site-header">
-    <a href="#" class="site-brand">
-      <i class="fa-solid fa-graduation-cap"></i>
-      <span>FIAP • Engenharia da Computação (2022)</span>
-    </a>
-    <div class="header-actions">
-      <a href="https://github.com/Guimemee/fiap-computational-thinking-for-engineering" target="_blank" class="btn-github">
-        <i class="fa-brands fa-github"></i>
-        <span>Ver Repositório</span>
-      </a>
+    <div class="header-inner">
+      <div class="brand-container">
+        <div class="brand-logo">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <div class="brand-text">
+          <div class="brand-title">FIAP • Engenharia da Computação</div>
+          <div class="brand-subrow">
+            <span class="brand-badge">Turma 1ECR • 2022</span>
+            <a href="https://github.com/Guimemee/fiap-computational-thinking-for-engineering" target="_blank" class="btn-repo-sub">
+              <i class="fa-brands fa-github"></i>
+              <span>Ver Repositório</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <nav class="header-nav">
+        <a href="#metricas" class="nav-link"><i class="fa-solid fa-chart-line"></i><span>Métricas</span></a>
+        <a href="#global-solutions-hub" class="nav-link"><i class="fa-solid fa-earth-americas"></i><span>Global Solutions</span></a>
+        <a href="#challenge-sprints-hub" class="nav-link"><i class="fa-solid fa-bolt"></i><span>Sprints HAOC</span></a>
+        <a href="#avaliacoes-hub" class="nav-link"><i class="fa-solid fa-clipboard-check"></i><span>Avaliações</span></a>
+        <a href="#exercicios-hub" class="nav-link"><i class="fa-solid fa-code"></i><span>Exercícios</span></a>
+      </nav>
     </div>
   </header>
 
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <div class="hero-badge">
+      <i class="fa-solid fa-shield-halved"></i> Acervo Oficial • FIAP Engineering 2022
+    </div>
+    <h1 class="hero-title">
+      Computational Thinking for Engineering
+    </h1>
+    <p class="hero-subtitle">
+      Portfólio Oficial de Engenharia da Computação • 106 Algoritmos em Python, Sistemas Embarcados em Arduino C++, Resoluções de Provas e Inovações Hospitalares (HAOC).
+    </p>
+    <div class="hero-stats">
+      <div class="stat-pill"><i class="fa-solid fa-file-code"></i> <b>106</b> Códigos-Fonte</div>
+      <div class="stat-pill"><i class="fa-solid fa-code-branch"></i> <b>3.113</b> Linhas de Código</div>
+      <div class="stat-pill"><i class="fa-solid fa-award"></i> <b>7</b> Avaliações / Checkpoints</div>
+      <div class="stat-pill"><i class="fa-solid fa-hospital"></i> <b>4</b> Sprints HAOC</div>
+      <div class="stat-pill"><i class="fa-solid fa-car-battery"></i> <b>2</b> Global Solutions</div>
+      <div class="stat-pill stat-verified"><i class="fa-solid fa-circle-check"></i> <b>100%</b> Validado</div>
+    </div>
+
+    <!-- Campo de Busca Rápida -->
+    <div class="search-box-wrap">
+      <i class="fa-solid fa-magnifying-glass search-icon"></i>
+      <input type="text" id="projectSearch" class="search-input" placeholder="Buscar por projeto, prova, sensor ou exercício... (ex: gasolina, forca, esteira, jokenpo)">
+    </div>
+  </section>
+
+  <!-- MAIN CONTAINER -->
   <main class="main-container">
+    
+<!-- ========================================== -->
+<!-- 1. DASHBOARD DE MÉTRICAS & PERFIL (GRID)    -->
+<!-- ========================================== -->
+<section id="metricas" class="dashboard-section">
+  <div class="section-title-wrap">
+    <div class="section-icon-badge"><i class="fa-solid fa-chart-pie"></i></div>
+    <div>
+      <h2 class="section-title">Perfil Acadêmico & Métricas do Repositório</h2>
+      <p class="section-desc">Identificação oficial de engenharia, métricas de versionamento e stack tecnológica na FIAP.</p>
+    </div>
+  </div>
+
+  <div class="metrics-grid">
+    <!-- Card 1: Informações Pessoais -->
+    <div class="metric-card">
+      <div class="metric-card-header">
+        <div class="header-left">
+          <i class="fa-solid fa-user-shield"></i>
+          <span>Informações Pessoais</span>
+        </div>
+        <span class="card-pill">Perfil Oficial</span>
+      </div>
+      <div class="metric-card-body">
+        <a href="assets/metrics/card_personal.svg" target="_blank" rel="noopener noreferrer" title="Clique para ampliar">
+          <img src="assets/metrics/card_personal.svg" alt="Informações Pessoais" class="metric-img">
+        </a>
+      </div>
+    </div>
+
+    <!-- Card 2: Perfil do Desenvolvedor & Repositório -->
+    <div class="metric-card">
+      <div class="metric-card-header">
+        <div class="header-left">
+          <i class="fa-brands fa-github"></i>
+          <span>FIAP - Engenharia de Computação — Repositório</span>
+        </div>
+        <span class="card-pill">Guilherme</span>
+      </div>
+      <div class="metric-card-body">
+        <a href="assets/metrics/card_user.svg" target="_blank" rel="noopener noreferrer" title="Clique para ampliar">
+          <img src="assets/metrics/card_user.svg" alt="Perfil do Desenvolvedor e Repositório" class="metric-img">
+        </a>
+      </div>
+    </div>
+
+    <!-- Card 3: Isometric Commit Calendar -->
+    <div class="metric-card">
+      <div class="metric-card-header">
+        <div class="header-left">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>📅 Isometric Commit Calendar</span>
+        </div>
+        <span class="card-pill">Atividade</span>
+      </div>
+      <div class="metric-card-body">
+        <a href="assets/metrics/card_repo_metrics.svg" target="_blank" rel="noopener noreferrer" title="Clique para ampliar">
+          <img src="assets/metrics/card_repo_metrics.svg" alt="Calendário Isométrico de Commits" class="metric-img">
+        </a>
+      </div>
+    </div>
+
+    <!-- Card 4: Languages Activity -->
+    <div class="metric-card">
+      <div class="metric-card-header">
+        <div class="header-left">
+          <i class="fa-solid fa-chart-column"></i>
+          <span>🈷️ Languages Activity</span>
+        </div>
+        <span class="card-pill">Python & C++</span>
+      </div>
+      <div class="metric-card-body">
+        <a href="assets/metrics/card_languages.svg" target="_blank" rel="noopener noreferrer" title="Clique para ampliar">
+          <img src="assets/metrics/card_languages.svg" alt="Linguagens Utilizadas e Estatísticas" class="metric-img">
+        </a>
+      </div>
+    </div>
+
+    <!-- Card 5: Tecnologias e Stacks FIAP 1ECR (Full Width) -->
+    <div class="metric-card metric-card-full">
+      <div class="metric-card-header">
+        <div class="header-left">
+          <i class="fa-solid fa-microchip"></i>
+          <span>🏛️ FIAP - 1ECR - Engenharia de Computação (Tecnologias & Ferramentas 2022)</span>
+        </div>
+        <span class="card-pill">Stack Completa</span>
+      </div>
+      <div class="metric-card-body">
+        <a href="assets/metrics/card_technologies.svg" target="_blank" rel="noopener noreferrer" title="Clique para ampliar">
+          <img src="assets/metrics/card_technologies.svg" alt="FIAP 1ECR Tecnologias e Ferramentas" class="metric-img metric-tech-img">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================== -->
+<!-- 2. GLOBAL SOLUTIONS (HUB INTERATIVO)        -->
+<!-- ========================================== -->
+<section id="global-solutions-hub" class="dashboard-section">
+  <div class="section-title-wrap">
+    <div class="section-icon-badge gs-badge"><i class="fa-solid fa-earth-americas"></i></div>
+    <div>
+      <h2 class="section-title">🌐 Global Solutions — Projetos Integrados Anuais</h2>
+      <p class="section-desc">Grandes desafios acadêmicos interdisciplinares de modelagem e tarifação sustentável.</p>
+    </div>
+  </div>
+
+  <div class="hub-grid-2">
+    <a href="#global-solution-1ecr-1_2022-veículos-elétricos" class="hub-card hub-card-gs">
+      <div class="hub-card-header">
+        <span class="hub-badge-pill"><i class="fa-solid fa-car-battery"></i> GS 1 • 1º Semestre</span>
+        <span class="hub-tag">Python 3.10</span>
+      </div>
+      <h3 class="hub-card-title">Veículos Elétricos: Consumo & Autonomia</h3>
+      <p class="hub-card-text">Modelagem computacional comparando eficiência energética (kWh) entre carros elétricos e motores a combustão com ciclo iterativo.</p>
+      <div class="hub-card-footer">
+        <span>Explorar Documentação & Código Completo</span>
+        <i class="fa-solid fa-arrow-right"></i>
+      </div>
+    </a>
+
+    <a href="#global-solution-22022-locação-de-frota-de-veículos-elétricos" class="hub-card hub-card-gs">
+      <div class="hub-card-header">
+        <span class="hub-badge-pill"><i class="fa-solid fa-charging-station"></i> GS 2 • 2º Semestre</span>
+        <span class="hub-tag">Python & Tarifação</span>
+      </div>
+      <h3 class="hub-card-title">Locação de Frota Elétrica & Tarifas TUSD/TE</h3>
+      <p class="hub-card-text">Sistema corporativo de gestão de frotas com tarifação horária diferenciada (ponta/fora de ponta) e descarte de picos de consumo.</p>
+      <div class="hub-card-footer">
+        <span>Explorar Documentação & Código Completo</span>
+        <i class="fa-solid fa-arrow-right"></i>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ========================================== -->
+<!-- 3. CHALLENGE SPRINTS HAOC (HUB INTERATIVO) -->
+<!-- ========================================== -->
+<section id="challenge-sprints-hub" class="dashboard-section">
+  <div class="section-title-wrap">
+    <div class="section-icon-badge sprint-badge"><i class="fa-solid fa-hospital"></i></div>
+    <div>
+      <h2 class="section-title">⚡ Challenge Sprints — Hospital Alemão Oswaldo Cruz (HAOC)</h2>
+      <p class="section-desc">Jornada de inovação em engenharia biomédica e telemetria hospitalar IoT desenvolvida em 4 etapas.</p>
+    </div>
+  </div>
+
+  <div class="hub-grid-4">
+    <a href="#sprint-1-proposta-do-challenge-hardware-software-e-cronograma" class="hub-card hub-card-sprint">
+      <div class="sprint-step-tag">Sprint 1</div>
+      <h4 class="sprint-card-title">Requisitos, Ideia & Objetivo</h4>
+      <p class="sprint-card-text">Concepção da solução hospitalar, delimitação do escopo e matriz de requisitos clínicos.</p>
+      <div class="sprint-card-link">Ver Detalhes <i class="fa-solid fa-arrow-right"></i></div>
+    </a>
+
+    <a href="#sprint-2-ideia-consolidada-arquitetura-e-diagrama-de-sistema" class="hub-card hub-card-sprint">
+      <div class="sprint-step-tag">Sprint 2</div>
+      <h4 class="sprint-card-title">Arquitetura 4 Camadas</h4>
+      <p class="sprint-card-text">Diagrama funcional: Sensores, Gateway Edge, Nuvem HAOC e Aplicação Médica.</p>
+      <div class="sprint-card-link">Ver Detalhes <i class="fa-solid fa-arrow-right"></i></div>
+    </a>
+
+    <a href="#sprint-3-custo-de-desenvolvimento-e-protótipo-de-engenharia" class="hub-card hub-card-sprint">
+      <div class="sprint-step-tag">Sprint 3</div>
+      <h4 class="sprint-card-title">Hardware, ESP32 & BOM</h4>
+      <p class="sprint-card-text">Protótipo de engenharia, sensores de leito e Bill of Materials orçada em R$ 1.840,00.</p>
+      <div class="sprint-card-link">Ver Detalhes <i class="fa-solid fa-arrow-right"></i></div>
+    </a>
+
+    <a href="#sprint-4-relatório-final-integrado-e-conclusão" class="hub-card hub-card-sprint">
+      <div class="sprint-step-tag">Sprint 4</div>
+      <h4 class="sprint-card-title">Cronograma & Conclusão</h4>
+      <p class="sprint-card-text">Relatório final consolidado, planejamento de implantação em leitos e pitch executivo.</p>
+      <div class="sprint-card-link">Ver Detalhes <i class="fa-solid fa-arrow-right"></i></div>
+    </a>
+  </div>
+</section>
+
+<!-- ========================================== -->
+<!-- 4. AVALIAÇÕES DO ANO 2022 (PYTHON & ARDUINO)-->
+<!-- ========================================== -->
+<section id="avaliacoes-hub" class="dashboard-section">
+  <div class="section-title-wrap">
+    <div class="section-icon-badge eval-badge-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+    <div>
+      <h2 class="section-title">📝 Avaliações Formais do Ano 2022 — Turma 1ECR</h2>
+      <p class="section-desc">12 provas práticas avaliativas oficiais cobrindo programação algorítmica e automação em hardware.</p>
+    </div>
+  </div>
+
+  <div class="hub-grid-2">
+    <!-- Coluna Python -->
+    <div class="hub-panel">
+      <div class="hub-panel-header py-header">
+        <i class="fa-brands fa-python"></i>
+        <span>🐍 Programação em Python (6 Provas)</span>
+      </div>
+      <div class="hub-panel-list">
+        <a href="#precificação-da-gasolina-comum-gasolina-c" class="hub-list-item">
+          <span class="item-badge">Prova 1</span>
+          <span class="item-title">Precificação da Gasolina Comum (Gasolina C)</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+        <a href="#fatura-de-energia-elétrica-residencial-tusd--te" class="hub-list-item">
+          <span class="item-badge">Prova 2</span>
+          <span class="item-title">Fatura de Energia Residencial (TUSD / TE)</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+        <a href="#cálculo-de-médias-fiap-com-descarte-de-menor-nota-e-exame" class="hub-list-item">
+          <span class="item-badge">Prova 3</span>
+          <span class="item-title">Cálculo de Médias FIAP com Descarte</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+        <a href="#corretor-automático-de-gabarito-de-provas" class="hub-list-item">
+          <span class="item-badge">Prova 4</span>
+          <span class="item-title">Corretor Automático de Gabarito de Provas</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+        <a href="#jogo-jokenpô-automatizado-com-placar" class="hub-list-item">
+          <span class="item-badge">Prova 5</span>
+          <span class="item-title">Jogo Jokenpô Automatizado com Placar</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+        <a href="#jogo-da-forca-interativo" class="hub-list-item">
+          <span class="item-badge">Prova 6</span>
+          <span class="item-title">Jogo da Forca Interativo</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Coluna Arduino -->
+    <div class="hub-panel">
+      <div class="hub-panel-header ard-header">
+        <i class="fa-solid fa-microchip"></i>
+        <span>🤖 Automação e Microcontroladores (Arduino C++) (6 Provas)</span>
+      </div>
+      <div class="hub-panel-list">
+        <a href="#prova-1-índice-de-risco-de-ataques-terroristas-bin-laden" class="hub-list-item">
+          <span class="item-badge ard-badge">Prova 1</span>
+          <span class="item-title">Índice de Risco de Ataques (Bin Laden)</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+        <a href="#prova-2-sinalizador-luminoso-de-ambulância-samu" class="hub-list-item">
+          <span class="item-badge ard-badge">Prova 2</span>
+          <span class="item-title">Sinalizador de Ambulância SAMU</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+        <a href="#prova-3-automação-de-esteira-industrial-com-aquecimento-e-resfriamento" class="hub-list-item">
+          <span class="item-badge ard-badge">Prova 3</span>
+          <span class="item-title">Esteira com Aquecimento e Resfriamento</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+        <a href="#prova-4-contador-de-peças-industriais-com-alerta-de-lotação-de-caixa" class="hub-list-item">
+          <span class="item-badge ard-badge">Prova 4</span>
+          <span class="item-title">Contador de Peças e Alerta de Caixa</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+        <a href="#prova-5-painel-de-operador-com-botão-de-reset-e-reinício-de-ciclo" class="hub-list-item">
+          <span class="item-badge ard-badge">Prova 5</span>
+          <span class="item-title">Painel de Operador com Botão de Reset</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+        <a href="#prova-6-classificador-ótico-de-caixas-por-altura-com-sensores-múltiplos" class="hub-list-item">
+          <span class="item-badge ard-badge">Prova 6</span>
+          <span class="item-title">Classificador Ótico por Altura</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================== -->
+<!-- 5. EXERCÍCIOS DE LABORATÓRIO (HUB INTERATIVO)-->
+<!-- ========================================== -->
+<section id="exercicios-hub" class="dashboard-section">
+  <div class="section-title-wrap">
+    <div class="section-icon-badge ex-badge"><i class="fa-solid fa-code"></i></div>
+    <div>
+      <h2 class="section-title">📦 Exercícios do Ano 2022 — 1ECR — Computational Thinking</h2>
+      <p class="section-desc">Laboratórios semanais, módulos teóricos e bancadas práticas de eletrônica.</p>
+    </div>
+  </div>
+
+  <div class="hub-grid-2">
+    <!-- Coluna Python Exercicios -->
+    <div class="hub-panel">
+      <div class="hub-panel-header py-header">
+        <i class="fa-brands fa-python"></i>
+        <span>📚 Exercícios Práticos de Laboratório (Python)</span>
+      </div>
+      <div class="hub-panel-list">
+        <a href="#módulo-1-estruturas-sequenciais-variáveis-e-operações-aritméticas" class="hub-list-item">
+          <span class="item-badge">Módulo 1</span>
+          <span class="item-title">Estruturas Sequenciais e Aritmética</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+        <a href="#módulo-2-estruturas-de-decisão-e-desvios-condicionais-if-elif-else" class="hub-list-item">
+          <span class="item-badge">Módulo 2</span>
+          <span class="item-title">Estruturas de Decisão (if / elif / else)</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+        <a href="#módulo-3-estruturas-de-repetição-e-laços-for-while" class="hub-list-item">
+          <span class="item-badge">Módulo 3</span>
+          <span class="item-title">Estruturas de Repetição (for / while)</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+        <a href="#módulo-4-funções-modulares-e-algoritmos-matemáticos-def" class="hub-list-item">
+          <span class="item-badge">Módulo 4</span>
+          <span class="item-title">Funções Modulares e Algoritmos (def)</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+        <a href="#módulo-5-estruturas-de-dados-listas-e-dicionários" class="hub-list-item">
+          <span class="item-badge">Módulo 5</span>
+          <span class="item-title">Estruturas de Dados (Listas e Dicionários)</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Coluna Arduino Exercicios -->
+    <div class="hub-panel">
+      <div class="hub-panel-header ard-header">
+        <i class="fa-solid fa-robot"></i>
+        <span>🛠️ Exercícios Práticos de Laboratório (Arduino C++)</span>
+      </div>
+      <div class="hub-panel-list">
+        <a href="#projeto-1-led-pisca-pisca-laboratório-básico-de-hardware" class="hub-list-item">
+          <span class="item-badge ard-badge">Projeto 1</span>
+          <span class="item-title">LED Pisca Pisca & Média Serial</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+        <a href="#projeto-2-led-pisca-pisca-com-delay-decremental" class="hub-list-item">
+          <span class="item-badge ard-badge">Projeto 2</span>
+          <span class="item-title">LED Decremental & Semáforo 3 Tempos</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+        <a href="#projeto-3-luz-pulsante-modulação-pwm-incremental" class="hub-list-item">
+          <span class="item-badge ard-badge">Projeto 3</span>
+          <span class="item-title">Luz Pulsante & Semáforo com Botão</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+        <a href="#projeto-4-meu-primeiro-botão-pushbutton-chave-tátil" class="hub-list-item">
+          <span class="item-badge ard-badge">Projeto 4</span>
+          <span class="item-title">Pushbutton & Controle de Brilho PWM</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+        <a href="#projeto-5-led-controlado-por-potenciômetro-entrada-analógica-a5" class="hub-list-item">
+          <span class="item-badge ard-badge">Projeto 5</span>
+          <span class="item-title">Potenciômetro & Iluminação Pública LDR</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+        <a href="#projeto-6-led-inteligente-com-sensor-ldr" class="hub-list-item">
+          <span class="item-badge ard-badge">Projeto 6</span>
+          <span class="item-title">LED Inteligente & Display 7 Segmentos</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+        <a href="#projeto-7-calibrando-o-led-inteligente-via-monitor-serial" class="hub-list-item">
+          <span class="item-badge ard-badge">Projeto 7</span>
+          <span class="item-title">Calibração Serial & Sensor Ultrassônico</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+        <a href="#projeto-8-leds-controlados-pelo-teclado-via-porta-serial" class="hub-list-item">
+          <span class="item-badge ard-badge">Projeto 8</span>
+          <span class="item-title">Teclado Serial & Automação de Circuitos</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="hub-divider">
+
+
     <article class="markdown-body">
-      <h1 dir="auto">💻 FIAP • Engenharia da Computação</h1>
-<h3 dir="auto">Portfólio Acadêmico e Repositório Oficial de Engenharia • Computational Thinking for Engineering (2022)</h3>
-<markdown-accessiblity-table><table role="table">
-  
-  <tbody><tr>
-    <th colspan="2" align="center">Informações Pessoais</th>
-  </tr>
-  <tr>
-    <td colspan="2" align="center" valign="middle">
-      <a target="_blank" rel="noopener noreferrer" href="assets/metrics/card_personal.svg"><img src="assets/metrics/card_personal.svg" alt="Informações Pessoais" width="940" style="max-width: 100%;"></a>
-    </td>
-  </tr>
-  
-  <tr>
-    <th colspan="2" align="center">FIAP - Engenharia de computação — Informações sobre o repositório</th>
-  </tr>
-  <tr>
-    <td colspan="2" align="center" valign="middle">
-      <a target="_blank" rel="noopener noreferrer" href="assets/metrics/card_user.svg"><img src="assets/metrics/card_user.svg" alt="FIAP - Engenharia de computação — Informações sobre o repositório" width="940" style="max-width: 100%;"></a>
-    </td>
-  </tr>
-  
-  <tr>
-    <th colspan="2" align="center">📅 Isometric commit calendar</th>
-  </tr>
-  <tr>
-    <td colspan="2" align="center" valign="middle">
-      <a target="_blank" rel="noopener noreferrer" href="assets/metrics/card_repo_metrics.svg"><img src="assets/metrics/card_repo_metrics.svg" alt="Métricas e Calendário de Commits" width="940" style="max-width: 100%;"></a>
-    </td>
-  </tr>
-  
-  <tr>
-    <th colspan="2" align="center">🈷️ Languages activity</th>
-  </tr>
-  <tr>
-    <td colspan="2" align="center" valign="middle">
-      <a target="_blank" rel="noopener noreferrer" href="assets/metrics/card_languages.svg"><img src="assets/metrics/card_languages.svg" alt="Languages Activity" width="940" style="max-width: 100%;"></a>
-    </td>
-  </tr>
-  
-  <tr>
-    <th colspan="2" align="center">🏛️ FIAP - 1ECR - Engenharia de computação 2022</th>
-  </tr>
-  <tr>
-    <td colspan="2" align="center" valign="middle">
-      <a target="_blank" rel="noopener noreferrer" href="assets/metrics/card_technologies.svg"><img src="assets/metrics/card_technologies.svg" alt="FIAP - 1ECR - Engenharia de computação 2022" width="940" style="max-width: 100%;"></a>
-    </td>
-  </tr>
-  
-  <tr>
-    <th colspan="2" align="center">🌐 Global Solution (Projetos Integrados)</th>
-  </tr>
-  <tr>
-    <td align="left" valign="top">
-      <p dir="auto">🔗 <a href="#global-solution-1ecr-1_2022-veículos-elétricos"><b>GS 1 (1ECR 1_2022): Veículos Elétricos</b></a></p>
-      <a target="_blank" rel="noopener noreferrer" href=""><img width="460" height="1" alt="" style="max-width: 100%; height: auto; max-height: 1px;"></a>
-    </td>
-    <td align="left" valign="top">
-      <p dir="auto">🔗 <a href="#global-solution-22022-locação-de-frota-de-veículos-elétricos"><b>GS 2 (2/2022): Locação de Frota Elétrica</b></a></p>
-      <a target="_blank" rel="noopener noreferrer" href=""><img width="460" height="1" alt="" style="max-width: 100%; height: auto; max-height: 1px;"></a>
-    </td>
-  </tr>
-  
-  <tr>
-    <th colspan="2" align="center">⚡ Challenge Sprints — Hospital Alemão Oswaldo Cruz (HAOC)</th>
-  </tr>
-  <tr>
-    <td align="left" valign="top">
-      <p dir="auto">🔗 <a href="#sprint-1-proposta-do-challenge-hardware-software-e-cronograma"><b>Sprint 1: Requisitos, Ideia Consolidada e Objetivo</b></a></p>
-    </td>
-    <td align="left" valign="top">
-      <p dir="auto">🔗 <a href="#sprint-3-custo-de-desenvolvimento-e-protótipo-de-engenharia"><b>Sprint 3: Hardware, BOM (R$ 1.840,00) e ESP32</b></a></p>
-    </td>
-  </tr>
-  <tr>
-    <td align="left" valign="top">
-      <p dir="auto">🔗 <a href="#sprint-2-ideia-consolidada-arquitetura-e-diagrama-de-sistema"><b>Sprint 2: Arquitetura 4 Camadas e Diagrama</b></a></p>
-      <a target="_blank" rel="noopener noreferrer" href=""><img width="460" height="1" alt="" style="max-width: 100%; height: auto; max-height: 1px;"></a>
-    </td>
-    <td align="left" valign="top">
-      <p dir="auto">🔗 <a href="#sprint-4-relatório-final-integrado-e-conclusão"><b>Sprint 4: Cronograma Anual e Conclusão</b></a></p>
-      <a target="_blank" rel="noopener noreferrer" href=""><img width="460" height="1" alt="" style="max-width: 100%; height: auto; max-height: 1px;"></a>
-    </td>
-  </tr>
-  
-  <tr>
-    <th colspan="2" align="center">📝 Avaliações do ano 2022 - 1ECR - Computational Thinking for Engineering</th>
-  </tr>
-  <tr>
-    <th width="50%" align="center">🐍 Programação em Python</th>
-    <th width="50%" align="center">🤖 Automação e Microcontroladores (Arduino C++)</th>
-  </tr>
-  <tr>
-    <td align="left" valign="top">
-      <p dir="auto">📝 <a href="#precificação-da-gasolina-comum-gasolina-c"><b>1: Precificação da Gasolina Comum (Gasolina C)</b></a></p>
-    </td>
-    <td align="left" valign="top">
-      <p dir="auto">📝 <a href="#prova-1-índice-de-risco-de-ataques-terroristas-bin-laden"><b>1 — Índice de Risco de Ataques (Bin Laden)</b></a></p>
-    </td>
-  </tr>
-  <tr>
-    <td align="left" valign="top">
-      <p dir="auto">📝 <a href="#fatura-de-energia-elétrica-residencial-tusd--te"><b>2: Fatura de Energia Residencial (TUSD / TE)</b></a></p>
-    </td>
-    <td align="left" valign="top">
-      <p dir="auto">📝 <a href="#prova-2-sinalizador-luminoso-de-ambulância-samu"><b>2 — Sinalizador de Ambulância SAMU</b></a></p>
-    </td>
-  </tr>
-  <tr>
-    <td align="left" valign="top">
-      <p dir="auto">📝 <a href="#cálculo-de-médias-fiap-com-descarte-de-menor-nota-e-exame"><b>3: Cálculo de Médias FIAP com Descarte</b></a></p>
-    </td>
-    <td align="left" valign="top">
-      <p dir="auto">📝 <a href="#prova-3-automação-de-esteira-industrial-com-aquecimento-e-resfriamento"><b>3 — Esteira com Aquecimento e Resfriamento</b></a></p>
-    </td>
-  </tr>
-  <tr>
-    <td align="left" valign="top">
-      <p dir="auto">📝 <a href="#corretor-automático-de-gabarito-de-provas"><b>4: Corretor Automático de Gabarito de Provas</b></a></p>
-    </td>
-    <td align="left" valign="top">
-      <p dir="auto">📝 <a href="#prova-4-contador-de-peças-industriais-com-alerta-de-lotação-de-caixa"><b>4 — Contador de Peças e Alerta de Caixa</b></a></p>
-    </td>
-  </tr>
-  <tr>
-    <td align="left" valign="top">
-      <p dir="auto">📝 <a href="#jogo-jokenpô-automatizado-com-placar"><b>5: Jogo Jokenpô Automatizado com Placar</b></a></p>
-    </td>
-    <td align="left" valign="top">
-      <p dir="auto">📝 <a href="#prova-5-painel-de-operador-com-botão-de-reset-e-reinício-de-ciclo"><b>5 — Painel de Operador com Botão de Reset</b></a></p>
-    </td>
-  </tr>
-  <tr>
-    <td align="left" valign="top">
-      <p dir="auto">📝 <a href="#jogo-da-forca-interativo"><b>6: Jogo da Forca Interativo</b></a></p>
-      <a target="_blank" rel="noopener noreferrer" href=""><img width="460" height="1" alt="" style="max-width: 100%; height: auto; max-height: 1px;"></a>
-    </td>
-    <td align="left" valign="top">
-      <p dir="auto">📝 <a href="#prova-6-classificador-ótico-de-caixas-por-altura-com-sensores-múltiplos"><b>6 — Classificador Ótico por Altura</b></a></p>
-      <a target="_blank" rel="noopener noreferrer" href=""><img width="460" height="1" alt="" style="max-width: 100%; height: auto; max-height: 1px;"></a>
-    </td>
-  </tr>
-  
-  <tr>
-    <th colspan="2" align="center">📦 Exercícios do ano 2022 - 1ECR - Computational Thinking for Engineering</th>
-  </tr>
-  <tr>
-    <th width="50%" align="center">📚 Exercícios Práticos de Laboratório (Python)</th>
-    <th width="50%" align="center">🛠️ Exercícios Práticos de Laboratório (Arduino C++)</th>
-  </tr>
-  <tr>
-    <td align="left" valign="top">
-      <p dir="auto">📦 <a href="#módulo-1-estruturas-sequenciais-variáveis-e-operações-aritméticas"><b>Módulo 1: Estruturas Sequenciais e Aritmética</b></a></p>
-      <p dir="auto">📦 <a href="#módulo-2-estruturas-de-decisão-e-desvios-condicionais-if-elif-else"><b>Módulo 2: Estruturas de Decisão (if / elif / else)</b></a></p>
-      <p dir="auto">📦 <a href="#módulo-3-estruturas-de-repetição-e-laços-for-while"><b>Módulo 3: Estruturas de Repetição (for / while)</b></a></p>
-      <p dir="auto">📦 <a href="#módulo-4-funções-modulares-e-algoritmos-matemáticos-def"><b>Módulo 4: Funções Modulares e Algoritmos (def)</b></a></p>
-      <p dir="auto">📦 <a href="#módulo-5-estruturas-de-dados-listas-e-dicionários"><b>Módulo 5: Estruturas de Dados (Listas e Dicionários)</b></a></p>
-      <a target="_blank" rel="noopener noreferrer" href=""><img width="460" height="1" alt="" style="max-width: 100%; height: auto; max-height: 1px;"></a>
-    </td>
-    <td align="left" valign="top">
-      <p dir="auto">🔧 <a href="#projeto-1-led-pisca-pisca-laboratório-básico-de-hardware"><b>Projeto 1: LED Pisca Pisca &amp; Média Serial</b></a></p>
-      <p dir="auto">🔧 <a href="#projeto-2-led-pisca-pisca-com-delay-decremental"><b>Projeto 2: LED Decremental &amp; Semáforo 3 Tempos</b></a></p>
-      <p dir="auto">🔧 <a href="#projeto-3-luz-pulsante-modulação-pwm-incremental"><b>Projeto 3: Luz Pulsante &amp; Semáforo com Botão</b></a></p>
-      <p dir="auto">🔧 <a href="#projeto-4-meu-primeiro-botão-pushbutton-chave-tátil"><b>Projeto 4: Pushbutton &amp; Controle de Brilho PWM</b></a></p>
-      <p dir="auto">🔧 <a href="#projeto-5-led-controlado-por-potenciômetro-entrada-analógica-a5"><b>Projeto 5: Potenciômetro &amp; Iluminação Pública LDR</b></a></p>
-      <p dir="auto">🔧 <a href="#projeto-6-led-inteligente-com-sensor-ldr"><b>Projeto 6: LED Inteligente &amp; Display 7 Segmentos</b></a></p>
-      <p dir="auto">🔧 <a href="#projeto-7-calibrando-o-led-inteligente-via-monitor-serial"><b>Projeto 7: Calibração Serial &amp; Sensor Ultrassônico</b></a></p>
-      <p dir="auto">🔧 <a href="#projeto-8-leds-controlados-pelo-teclado-via-porta-serial"><b>Projeto 8: Teclado Serial &amp; Automação de Circuitos</b></a></p>
-      <a target="_blank" rel="noopener noreferrer" href=""><img width="460" height="1" alt="" style="max-width: 100%; height: auto; max-height: 1px;"></a>
-    </td>
-  </tr>
-</tbody></table></markdown-accessiblity-table>
-<hr>
-<h2 dir="auto">1. Global Solutions (Projetos Integrados)</h2>
+      <h2 dir="auto">1. Global Solutions (Projetos Integrados)</h2>
 <p dir="auto"><a id="user-content-global-solution-12022-veículos-elétricos"></a><br>
 <a id="user-content-global-solution-1ecr-1_2022-veículos-elétricos"></a></p>
 <h3 dir="auto">Global Solution 1ECR 1_2022: Veículos Elétricos</h3>
@@ -1311,7 +2469,7 @@ Desenvolver um exoesqueleto robótico de membro superior assistido por Interface
 <p dir="auto"><strong>2. Diagrama de Arquitetura do Sistema (<em>Closed-Loop</em>)</strong><br>
 A arquitetura opera em malha fechada (<em>closed-loop</em>), dividida em quatro camadas funcionais interconectadas:</p>
 </blockquote>
-<section class="js-render-needs-enrichment render-needs-enrichment position-relative" data-identity="e7fe956b-2145-46a5-ac1d-3b43e0093e7c" data-host="https://viewscreen.githubusercontent.com" data-src="https://viewscreen.githubusercontent.com/markdown/mermaid?docs_host=https%3A%2F%2Fdocs.github.com" data-type="mermaid" aria-label="mermaid rendered output container">
+<section class="js-render-needs-enrichment render-needs-enrichment position-relative" data-identity="6d254edc-775f-4f7d-bc0e-3f24f2714802" data-host="https://viewscreen.githubusercontent.com" data-src="https://viewscreen.githubusercontent.com/markdown/mermaid?docs_host=https%3A%2F%2Fdocs.github.com" data-type="mermaid" aria-label="mermaid rendered output container">
   <div class="js-render-enrichment-target" data-json="{&quot;data&quot;:&quot;graph TD\n    subgraph 1. Camada Neural (BCI)\n        E[Eletrodos Córtex Motor C3/Cz/C4] --&gt; F[Filtro Notch 60Hz + Bandpass 8-30Hz]\n        F --&gt; EXT[Extração de Ondas Mu e Beta]\n        EXT --&gt; S1[Saída: UART / BLE Intenção]\n    end\n\n    subgraph 2. Unidade Central (ESP32)\n        S1 --&gt; FSM[FSM de Controle de Estado e Segurança]\n        FSM --&gt; STEP[Geração de Pulsos STEP / DIR]\n        ENC[Encoders AS5600 + Fim-de-Curso] --&gt; FSM\n    end\n\n    subgraph 3. Potência Mecânica\n        STEP --&gt; DRV[Driver Silencioso TMC2208]\n        DRV --&gt; MOT[Motor de Passo NEMA 23]\n        MOT --&gt; RED[Redução Epicicloidal 1:10]\n        RED --&gt; ORT[Órtese / Junta Articular (4.8 N·m)]\n    end\n\n    subgraph 4. Telemetria Médica\n        FSM --&gt; GTW[Gateway Wi-Fi HTTPS / TLS 1.3]\n        GTW --&gt; JSON[Formato HL7 / FHIR JSON]\n        JSON --&gt; DASH[Dashboard Fisioterapeuta HAOC]\n        DASH --&gt; PRONT[Prontuário Oswaldo Cruz]\n    end\n&quot;}" data-plain="graph TD
     subgraph 1. Camada Neural (BCI)
         E[Eletrodos Córtex Motor C3/Cz/C4] --&gt; F[Filtro Notch 60Hz + Bandpass 8-30Hz]
@@ -1604,7 +2762,7 @@ Implementação em C/C++ FreeRTOS com interrupção de emergência IRAM_ATTR e d
 <hr>
 <h3 dir="auto">Cálculo do Volume de uma Esfera</h3>
 <blockquote>
-<p dir="auto">Elabore um programa em Python com uma função que recebe o raio de uma esfera e calcula o seu volume (<math-renderer class="js-inline-math" style="display: inline-block" data-run-id="120fc01f322e8c207a147fba57c7dc5a">$v = rac{4}{3}\pi R^3$</math-renderer>).</p>
+<p dir="auto">Elabore um programa em Python com uma função que recebe o raio de uma esfera e calcula o seu volume (<math-renderer class="js-inline-math" style="display: inline-block" data-run-id="0bebe8c03675883e6d45414619c3eb3c">$v = rac{4}{3}\pi R^3$</math-renderer>).</p>
 </blockquote>
 <h4 dir="auto">Link do Código:</h4>
 <ul dir="auto">
@@ -1655,7 +2813,7 @@ Implementação em C/C++ FreeRTOS com interrupção de emergência IRAM_ATTR e d
 <hr>
 <h3 dir="auto">Cálculo do Peso Ideal por Altura e Sexo</h3>
 <blockquote>
-<p dir="auto">Elabore um programa em Python com uma função que recebe a altura (alt) e o sexo de uma pessoa e retorna o seu peso ideal. Para homens: <math-renderer class="js-inline-math" style="display: inline-block" data-run-id="120fc01f322e8c207a147fba57c7dc5a">$72.7 	imes 	ext{alt} - 58$</math-renderer>. Para mulheres: <math-renderer class="js-inline-math" style="display: inline-block" data-run-id="120fc01f322e8c207a147fba57c7dc5a">$62.1 	imes 	ext{alt} - 44.7$</math-renderer>.</p>
+<p dir="auto">Elabore um programa em Python com uma função que recebe a altura (alt) e o sexo de uma pessoa e retorna o seu peso ideal. Para homens: <math-renderer class="js-inline-math" style="display: inline-block" data-run-id="0bebe8c03675883e6d45414619c3eb3c">$72.7 	imes 	ext{alt} - 58$</math-renderer>. Para mulheres: <math-renderer class="js-inline-math" style="display: inline-block" data-run-id="0bebe8c03675883e6d45414619c3eb3c">$62.1 	imes 	ext{alt} - 44.7$</math-renderer>.</p>
 </blockquote>
 <h4 dir="auto">Link do Código:</h4>
 <ul dir="auto">
@@ -2021,7 +3179,7 @@ Implementação em C/C++ FreeRTOS com interrupção de emergência IRAM_ATTR e d
 <p dir="auto"><a id="user-content-cálculo-do-discriminante-delta-de-equação-do-2º-grau"></a></p>
 <h3 dir="auto">Cálculo do Discriminante Δ de Equação do 2º Grau</h3>
 <blockquote>
-<p dir="auto">Crie um programa com uma função que receba três valores ('a', 'b', 'c') e retorne o valor de <math-renderer class="js-inline-math" style="display: inline-block" data-run-id="120fc01f322e8c207a147fba57c7dc5a">$\Delta$</math-renderer> (<math-renderer class="js-inline-math" style="display: inline-block" data-run-id="120fc01f322e8c207a147fba57c7dc5a">$b^2 - 4ac$</math-renderer>).</p>
+<p dir="auto">Crie um programa com uma função que receba três valores ('a', 'b', 'c') e retorne o valor de <math-renderer class="js-inline-math" style="display: inline-block" data-run-id="0bebe8c03675883e6d45414619c3eb3c">$\Delta$</math-renderer> (<math-renderer class="js-inline-math" style="display: inline-block" data-run-id="0bebe8c03675883e6d45414619c3eb3c">$b^2 - 4ac$</math-renderer>).</p>
 </blockquote>
 <h4 dir="auto">Link do Código:</h4>
 <ul dir="auto">
@@ -2038,7 +3196,7 @@ Implementação em C/C++ FreeRTOS com interrupção de emergência IRAM_ATTR e d
 <hr>
 <h3 dir="auto">Resolução da Equação do 2º Grau (Raízes Reais e Complexas)</h3>
 <blockquote>
-<p dir="auto">Crie um programa que calcula as raízes de uma equação do 2º grau (<math-renderer class="js-inline-math" style="display: inline-block" data-run-id="120fc01f322e8c207a147fba57c7dc5a">$ax^2 + bx + c = 0$</math-renderer>). Se <math-renderer class="js-inline-math" style="display: inline-block" data-run-id="120fc01f322e8c207a147fba57c7dc5a">$\Delta \ge 0$</math-renderer>, raízes reais; se <math-renderer class="js-inline-math" style="display: inline-block" data-run-id="120fc01f322e8c207a147fba57c7dc5a">$\Delta &amp;lt; 0$</math-renderer>, raízes complexas da forma <math-renderer class="js-inline-math" style="display: inline-block" data-run-id="120fc01f322e8c207a147fba57c7dc5a">$x + iy$</math-renderer>.</p>
+<p dir="auto">Crie um programa que calcula as raízes de uma equação do 2º grau (<math-renderer class="js-inline-math" style="display: inline-block" data-run-id="0bebe8c03675883e6d45414619c3eb3c">$ax^2 + bx + c = 0$</math-renderer>). Se <math-renderer class="js-inline-math" style="display: inline-block" data-run-id="0bebe8c03675883e6d45414619c3eb3c">$\Delta \ge 0$</math-renderer>, raízes reais; se <math-renderer class="js-inline-math" style="display: inline-block" data-run-id="0bebe8c03675883e6d45414619c3eb3c">$\Delta &amp;lt; 0$</math-renderer>, raízes complexas da forma <math-renderer class="js-inline-math" style="display: inline-block" data-run-id="0bebe8c03675883e6d45414619c3eb3c">$x + iy$</math-renderer>.</p>
 </blockquote>
 <h4 dir="auto">Link do Código:</h4>
 <ul dir="auto">
@@ -2253,7 +3411,7 @@ Implementação em C/C++ FreeRTOS com interrupção de emergência IRAM_ATTR e d
 <hr>
 <h3 dir="auto">Somatório de 1 até N</h3>
 <blockquote>
-<p dir="auto">Recebe um valor positivo N e retorna o somatório <math-renderer class="js-inline-math" style="display: inline-block" data-run-id="120fc01f322e8c207a147fba57c7dc5a">$1 + 2 + ... + N$</math-renderer>.</p>
+<p dir="auto">Recebe um valor positivo N e retorna o somatório <math-renderer class="js-inline-math" style="display: inline-block" data-run-id="0bebe8c03675883e6d45414619c3eb3c">$1 + 2 + ... + N$</math-renderer>.</p>
 </blockquote>
 <h4 dir="auto">Link do Código:</h4>
 <ul dir="auto">
@@ -2283,7 +3441,7 @@ Implementação em C/C++ FreeRTOS com interrupção de emergência IRAM_ATTR e d
 <p dir="auto"><a id="user-content-série-de-euler-s--1--11--12----1n"></a></p>
 <h3 dir="auto">Série de Euler S = 1 + 1/1! + 1/2! + ... + 1/N!</h3>
 <blockquote>
-<p dir="auto">Recebe N e calcula a aproximação do número de Euler <math-renderer class="js-inline-math" style="display: inline-block" data-run-id="120fc01f322e8c207a147fba57c7dc5a">$e$</math-renderer> por somatório com fatoriais.</p>
+<p dir="auto">Recebe N e calcula a aproximação do número de Euler <math-renderer class="js-inline-math" style="display: inline-block" data-run-id="0bebe8c03675883e6d45414619c3eb3c">$e$</math-renderer> por somatório com fatoriais.</p>
 </blockquote>
 <h4 dir="auto">Link do Código:</h4>
 <ul dir="auto">
@@ -2299,7 +3457,7 @@ Implementação em C/C++ FreeRTOS com interrupção de emergência IRAM_ATTR e d
 <hr>
 <h3 dir="auto">Exponenciação Manual X elevado a Z</h3>
 <blockquote>
-<p dir="auto">Recebe dois valores X e Z e calcula <math-renderer class="js-inline-math" style="display: inline-block" data-run-id="120fc01f322e8c207a147fba57c7dc5a">$X^Z$</math-renderer> utilizando apenas laço de repetição.</p>
+<p dir="auto">Recebe dois valores X e Z e calcula <math-renderer class="js-inline-math" style="display: inline-block" data-run-id="0bebe8c03675883e6d45414619c3eb3c">$X^Z$</math-renderer> utilizando apenas laço de repetição.</p>
 </blockquote>
 <h4 dir="auto">Link do Código:</h4>
 <ul dir="auto">
@@ -2822,9 +3980,57 @@ Implementação em C/C++ FreeRTOS com interrupção de emergência IRAM_ATTR e d
   </a>
 
   <footer>
-    <p>🎓 <b>FIAP • Engenharia da Computação — Turma 1ECR (2022)</b></p>
-    <p>Portfólio Oficial Desenvolvido por <b>Guilherme Macario da Silva</b></p>
-    <p>Código-Fonte e Acervo Acadêmico no <a href="https://github.com/Guimemee/fiap-computational-thinking-for-engineering" target="_blank">GitHub @Guimemee</a></p>
+    <p>🎓 <b>FIAP • Bacharelado em Engenharia da Computação — Turma 1ECR (2022)</b></p>
+    <p>Portfólio e Acervo Técnico Oficial Desenvolvido por <b>Guilherme Macario da Silva</b></p>
+    <p>Código-Fonte e Repositório Oficial no <a href="https://github.com/Guimemee/fiap-computational-thinking-for-engineering" target="_blank">GitHub @Guimemee</a></p>
   </footer>
+
+  <!-- Scripts Interativos: Copiar Código e Busca em Tempo Real -->
+  <script>
+    // 1. Inserir botão de copiar em todos os blocos de código
+    document.querySelectorAll('.markdown-body pre').forEach((pre) => {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'code-wrapper';
+      pre.parentNode.insertBefore(wrapper, pre);
+      wrapper.appendChild(pre);
+
+      const btn = document.createElement('button');
+      btn.className = 'btn-copy-code';
+      btn.innerHTML = '<i class="fa-regular fa-copy"></i> <span>Copiar</span>';
+      btn.title = 'Copiar código para a área de transferência';
+      
+      btn.addEventListener('click', () => {
+        const codeText = pre.innerText;
+        navigator.clipboard.writeText(codeText).then(() => {
+          btn.classList.add('copied');
+          btn.innerHTML = '<i class="fa-solid fa-check"></i> <span>Copiado!</span>';
+          setTimeout(() => {
+            btn.classList.remove('copied');
+            btn.innerHTML = '<i class="fa-regular fa-copy"></i> <span>Copiar</span>';
+          }, 2000);
+        });
+      });
+      wrapper.appendChild(btn);
+    });
+
+    // 2. Busca e Filtro em Tempo Real
+    const searchInput = document.getElementById('projectSearch');
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        const items = document.querySelectorAll('.hub-list-item, .hub-card');
+        
+        items.forEach((item) => {
+          const text = item.innerText.toLowerCase();
+          if (!query || text.includes(query)) {
+            item.style.display = '';
+            item.style.opacity = '1';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    }
+  </script>
 </body>
 </html>
