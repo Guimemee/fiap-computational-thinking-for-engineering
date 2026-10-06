@@ -95,7 +95,7 @@
             </svg>
         </g>
         <text x="85" y="62" class="tech-title">FIAP</text>
-        <rect x="10" y="72" width="150" height="20" rx="10" fill="#ED145B"/>
-        <text x="85" y="86" class="badge-text" style="font-size: 11.5px;">ENGENHARIA DE COMPUTAÇÃO</text>
+        <rect x="35" y="72" width="100" height="20" rx="10" fill="#ED145B"/>
+        <text x="85" y="86" class="badge-text">1ECR</text>
     </g>
 </svg>

@@ -40,7 +40,7 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 80px;
+      scroll-padding-top: 85px;
     }
 
     body {
@@ -63,6 +63,25 @@
       background: radial-gradient(circle, rgba(88, 166, 255, 0.08) 0%, rgba(35, 134, 54, 0.04) 40%, transparent 70%);
       pointer-events: none;
       z-index: 0;
+    }
+
+    /* Ancoras para rolagem com offset perfeito */
+    .anchor-offset {
+      display: block;
+      position: relative;
+      top: -85px;
+      visibility: hidden;
+    }
+
+    .anchor-target {
+      scroll-margin-top: 85px;
+      transition: background-color 0.4s ease;
+    }
+
+    .anchor-target:target {
+      background: rgba(88, 166, 255, 0.12);
+      border-radius: var(--radius-sm);
+      padding: 4px 8px;
     }
 
     /* ========================================== */
@@ -1208,7 +1227,7 @@
   </div>
 
   <div class="hub-grid-2">
-    <a href="#global-solution-1ecr-1_2022-veículos-elétricos" class="hub-card hub-card-gs">
+    <a href="#gs-1" class="hub-card hub-card-gs">
       <div class="hub-card-header">
         <span class="hub-badge-pill"><i class="fa-solid fa-car-battery"></i> GS 1 • 1º Semestre</span>
         <span class="hub-tag">Python 3.10</span>
@@ -1221,7 +1240,7 @@
       </div>
     </a>
 
-    <a href="#global-solution-22022-locação-de-frota-de-veículos-elétricos" class="hub-card hub-card-gs">
+    <a href="#gs-2" class="hub-card hub-card-gs">
       <div class="hub-card-header">
         <span class="hub-badge-pill"><i class="fa-solid fa-charging-station"></i> GS 2 • 2º Semestre</span>
         <span class="hub-tag">Python & Tarifação</span>
@@ -1249,28 +1268,28 @@
   </div>
 
   <div class="hub-grid-4">
-    <a href="#sprint-1-proposta-do-challenge-hardware-software-e-cronograma" class="hub-card hub-card-sprint">
+    <a href="#sprint-1" class="hub-card hub-card-sprint">
       <div class="sprint-step-tag">Sprint 1</div>
       <h4 class="sprint-card-title">Requisitos, Ideia & Objetivo</h4>
       <p class="sprint-card-text">Concepção da solução hospitalar, delimitação do escopo e matriz de requisitos clínicos.</p>
       <div class="sprint-card-link">Ver Detalhes <i class="fa-solid fa-arrow-right"></i></div>
     </a>
 
-    <a href="#sprint-2-ideia-consolidada-arquitetura-e-diagrama-de-sistema" class="hub-card hub-card-sprint">
+    <a href="#sprint-2" class="hub-card hub-card-sprint">
       <div class="sprint-step-tag">Sprint 2</div>
       <h4 class="sprint-card-title">Arquitetura 4 Camadas</h4>
       <p class="sprint-card-text">Diagrama funcional: Sensores, Gateway Edge, Nuvem HAOC e Aplicação Médica.</p>
       <div class="sprint-card-link">Ver Detalhes <i class="fa-solid fa-arrow-right"></i></div>
     </a>
 
-    <a href="#sprint-3-custo-de-desenvolvimento-e-protótipo-de-engenharia" class="hub-card hub-card-sprint">
+    <a href="#sprint-3" class="hub-card hub-card-sprint">
       <div class="sprint-step-tag">Sprint 3</div>
       <h4 class="sprint-card-title">Hardware, ESP32 & BOM</h4>
       <p class="sprint-card-text">Protótipo de engenharia, sensores de leito e Bill of Materials orçada em R$ 1.840,00.</p>
       <div class="sprint-card-link">Ver Detalhes <i class="fa-solid fa-arrow-right"></i></div>
     </a>
 
-    <a href="#sprint-4-relatório-final-integrado-e-conclusão" class="hub-card hub-card-sprint">
+    <a href="#sprint-4" class="hub-card hub-card-sprint">
       <div class="sprint-step-tag">Sprint 4</div>
       <h4 class="sprint-card-title">Cronograma & Conclusão</h4>
       <p class="sprint-card-text">Relatório final consolidado, planejamento de implantação em leitos e pitch executivo.</p>
@@ -1299,32 +1318,32 @@
         <span>🐍 Programação em Python (6 Provas)</span>
       </div>
       <div class="hub-panel-list">
-        <a href="#precificação-da-gasolina-comum-gasolina-c" class="hub-list-item">
+        <a href="#prova-py-1" class="hub-list-item">
           <span class="item-badge">Prova 1</span>
           <span class="item-title">Precificação da Gasolina Comum (Gasolina C)</span>
           <i class="fa-solid fa-chevron-right"></i>
         </a>
-        <a href="#fatura-de-energia-elétrica-residencial-tusd--te" class="hub-list-item">
+        <a href="#prova-py-2" class="hub-list-item">
           <span class="item-badge">Prova 2</span>
           <span class="item-title">Fatura de Energia Residencial (TUSD / TE)</span>
           <i class="fa-solid fa-chevron-right"></i>
         </a>
-        <a href="#cálculo-de-médias-fiap-com-descarte-de-menor-nota-e-exame" class="hub-list-item">
+        <a href="#prova-py-3" class="hub-list-item">
           <span class="item-badge">Prova 3</span>
           <span class="item-title">Cálculo de Médias FIAP com Descarte</span>
           <i class="fa-solid fa-chevron-right"></i>
         </a>
-        <a href="#corretor-automático-de-gabarito-de-provas" class="hub-list-item">
+        <a href="#prova-py-4" class="hub-list-item">
           <span class="item-badge">Prova 4</span>
           <span class="item-title">Corretor Automático de Gabarito de Provas</span>
           <i class="fa-solid fa-chevron-right"></i>
         </a>
-        <a href="#jogo-jokenpô-automatizado-com-placar" class="hub-list-item">
+        <a href="#prova-py-5" class="hub-list-item">
           <span class="item-badge">Prova 5</span>
           <span class="item-title">Jogo Jokenpô Automatizado com Placar</span>
           <i class="fa-solid fa-chevron-right"></i>
         </a>
-        <a href="#jogo-da-forca-interativo" class="hub-list-item">
+        <a href="#prova-py-6" class="hub-list-item">
           <span class="item-badge">Prova 6</span>
           <span class="item-title">Jogo da Forca Interativo</span>
           <i class="fa-solid fa-chevron-right"></i>
@@ -1339,32 +1358,32 @@
         <span>🤖 Automação e Microcontroladores (Arduino C++) (6 Provas)</span>
       </div>
       <div class="hub-panel-list">
-        <a href="#prova-1-índice-de-risco-de-ataques-terroristas-bin-laden" class="hub-list-item">
+        <a href="#prova-ard-1" class="hub-list-item">
           <span class="item-badge ard-badge">Prova 1</span>
           <span class="item-title">Índice de Risco de Ataques (Bin Laden)</span>
           <i class="fa-solid fa-chevron-right"></i>
         </a>
-        <a href="#prova-2-sinalizador-luminoso-de-ambulância-samu" class="hub-list-item">
+        <a href="#prova-ard-2" class="hub-list-item">
           <span class="item-badge ard-badge">Prova 2</span>
           <span class="item-title">Sinalizador de Ambulância SAMU</span>
           <i class="fa-solid fa-chevron-right"></i>
         </a>
-        <a href="#prova-3-automação-de-esteira-industrial-com-aquecimento-e-resfriamento" class="hub-list-item">
+        <a href="#prova-ard-3" class="hub-list-item">
           <span class="item-badge ard-badge">Prova 3</span>
           <span class="item-title">Esteira com Aquecimento e Resfriamento</span>
           <i class="fa-solid fa-chevron-right"></i>
         </a>
-        <a href="#prova-4-contador-de-peças-industriais-com-alerta-de-lotação-de-caixa" class="hub-list-item">
+        <a href="#prova-ard-4" class="hub-list-item">
           <span class="item-badge ard-badge">Prova 4</span>
           <span class="item-title">Contador de Peças e Alerta de Caixa</span>
           <i class="fa-solid fa-chevron-right"></i>
         </a>
-        <a href="#prova-5-painel-de-operador-com-botão-de-reset-e-reinício-de-ciclo" class="hub-list-item">
+        <a href="#prova-ard-5" class="hub-list-item">
           <span class="item-badge ard-badge">Prova 5</span>
           <span class="item-title">Painel de Operador com Botão de Reset</span>
           <i class="fa-solid fa-chevron-right"></i>
         </a>
-        <a href="#prova-6-classificador-ótico-de-caixas-por-altura-com-sensores-múltiplos" class="hub-list-item">
+        <a href="#prova-ard-6" class="hub-list-item">
           <span class="item-badge ard-badge">Prova 6</span>
           <span class="item-title">Classificador Ótico por Altura</span>
           <i class="fa-solid fa-chevron-right"></i>
@@ -1394,27 +1413,27 @@
         <span>📚 Exercícios Práticos de Laboratório (Python)</span>
       </div>
       <div class="hub-panel-list">
-        <a href="#módulo-1-estruturas-sequenciais-variáveis-e-operações-aritméticas" class="hub-list-item">
+        <a href="#modulo-1" class="hub-list-item">
           <span class="item-badge">Módulo 1</span>
           <span class="item-title">Estruturas Sequenciais e Aritmética</span>
           <i class="fa-solid fa-chevron-right"></i>
         </a>
-        <a href="#módulo-2-estruturas-de-decisão-e-desvios-condicionais-if-elif-else" class="hub-list-item">
+        <a href="#modulo-2" class="hub-list-item">
           <span class="item-badge">Módulo 2</span>
           <span class="item-title">Estruturas de Decisão (if / elif / else)</span>
           <i class="fa-solid fa-chevron-right"></i>
         </a>
-        <a href="#módulo-3-estruturas-de-repetição-e-laços-for-while" class="hub-list-item">
+        <a href="#modulo-3" class="hub-list-item">
           <span class="item-badge">Módulo 3</span>
           <span class="item-title">Estruturas de Repetição (for / while)</span>
           <i class="fa-solid fa-chevron-right"></i>
         </a>
-        <a href="#módulo-4-funções-modulares-e-algoritmos-matemáticos-def" class="hub-list-item">
+        <a href="#modulo-4" class="hub-list-item">
           <span class="item-badge">Módulo 4</span>
           <span class="item-title">Funções Modulares e Algoritmos (def)</span>
           <i class="fa-solid fa-chevron-right"></i>
         </a>
-        <a href="#módulo-5-estruturas-de-dados-listas-e-dicionários" class="hub-list-item">
+        <a href="#modulo-5" class="hub-list-item">
           <span class="item-badge">Módulo 5</span>
           <span class="item-title">Estruturas de Dados (Listas e Dicionários)</span>
           <i class="fa-solid fa-chevron-right"></i>
@@ -1429,42 +1448,42 @@
         <span>🛠️ Exercícios Práticos de Laboratório (Arduino C++)</span>
       </div>
       <div class="hub-panel-list">
-        <a href="#projeto-1-led-pisca-pisca-laboratório-básico-de-hardware" class="hub-list-item">
+        <a href="#projeto-1" class="hub-list-item">
           <span class="item-badge ard-badge">Projeto 1</span>
           <span class="item-title">LED Pisca Pisca & Média Serial</span>
           <i class="fa-solid fa-chevron-right"></i>
         </a>
-        <a href="#projeto-2-led-pisca-pisca-com-delay-decremental" class="hub-list-item">
+        <a href="#projeto-2" class="hub-list-item">
           <span class="item-badge ard-badge">Projeto 2</span>
           <span class="item-title">LED Decremental & Semáforo 3 Tempos</span>
           <i class="fa-solid fa-chevron-right"></i>
         </a>
-        <a href="#projeto-3-luz-pulsante-modulação-pwm-incremental" class="hub-list-item">
+        <a href="#projeto-3" class="hub-list-item">
           <span class="item-badge ard-badge">Projeto 3</span>
           <span class="item-title">Luz Pulsante & Semáforo com Botão</span>
           <i class="fa-solid fa-chevron-right"></i>
         </a>
-        <a href="#projeto-4-meu-primeiro-botão-pushbutton-chave-tátil" class="hub-list-item">
+        <a href="#projeto-4" class="hub-list-item">
           <span class="item-badge ard-badge">Projeto 4</span>
           <span class="item-title">Pushbutton & Controle de Brilho PWM</span>
           <i class="fa-solid fa-chevron-right"></i>
         </a>
-        <a href="#projeto-5-led-controlado-por-potenciômetro-entrada-analógica-a5" class="hub-list-item">
+        <a href="#projeto-5" class="hub-list-item">
           <span class="item-badge ard-badge">Projeto 5</span>
           <span class="item-title">Potenciômetro & Iluminação Pública LDR</span>
           <i class="fa-solid fa-chevron-right"></i>
         </a>
-        <a href="#projeto-6-led-inteligente-com-sensor-ldr" class="hub-list-item">
+        <a href="#projeto-6" class="hub-list-item">
           <span class="item-badge ard-badge">Projeto 6</span>
           <span class="item-title">LED Inteligente & Display 7 Segmentos</span>
           <i class="fa-solid fa-chevron-right"></i>
         </a>
-        <a href="#projeto-7-calibrando-o-led-inteligente-via-monitor-serial" class="hub-list-item">
+        <a href="#projeto-7" class="hub-list-item">
           <span class="item-badge ard-badge">Projeto 7</span>
           <span class="item-title">Calibração Serial & Sensor Ultrassônico</span>
           <i class="fa-solid fa-chevron-right"></i>
         </a>
-        <a href="#projeto-8-leds-controlados-pelo-teclado-via-porta-serial" class="hub-list-item">
+        <a href="#projeto-8" class="hub-list-item">
           <span class="item-badge ard-badge">Projeto 8</span>
           <span class="item-title">Teclado Serial & Automação de Circuitos</span>
           <i class="fa-solid fa-chevron-right"></i>
@@ -1480,7 +1499,7 @@
       <h2 dir="auto">1. Global Solutions (Projetos Integrados)</h2>
 <p dir="auto"><a id="user-content-global-solution-12022-veículos-elétricos"></a><br>
 <a id="user-content-global-solution-1ecr-1_2022-veículos-elétricos"></a></p>
-<h3 dir="auto">Global Solution 1ECR 1_2022: Veículos Elétricos</h3>
+<span id="gs-1-anchor" class="anchor-offset"></span><h3 id="gs-1" class="anchor-target" dir="auto">Global Solution 1ECR 1_2022: Veículos Elétricos</h3>
 <blockquote>
 <p dir="auto"><strong>Global Solution 1ECR 1_2022 - Guilherme Macario</strong></p>
 <p dir="auto">Veículos elétricos costumam ser mais econômicos que veículos a combustão (gasolina, etanol ou diesel), também podemos considerar os custos com a manutenção e o apelo da sustentabilidade.</p>
@@ -1524,7 +1543,7 @@
         <span class="pl-k">break</span></pre></div>
 <hr>
 <p dir="auto"><a id="user-content-global-solution-22022-locação-de-frota-de-veículos-elétricos"></a></p>
-<h3 dir="auto">Global Solution 2/2022: Locação de Frota de Veículos Elétricos</h3>
+<span id="gs-2-anchor" class="anchor-offset"></span><h3 id="gs-2" class="anchor-target" dir="auto">Global Solution 2/2022: Locação de Frota de Veículos Elétricos</h3>
 <blockquote>
 <p dir="auto">Desenvolver um programa em Python para gerenciamento e tarifação de locação de frota de veículos elétricos por categoria (Caminhão, Furgão, Picape, SUV, Hatchback, Sedan), realizando leitura de base de dados externa (<code class="notranslate">ListaDeCarros.txt</code>), cálculo tarifário com base nas faixas de tempo e emissão de comprovante em arquivo (<code class="notranslate">ResumoAluguel.txt</code>).</p>
 </blockquote>
@@ -1622,7 +1641,7 @@
 <p dir="auto"><a id="user-content-matéria-programação-em-python"></a><br>
 <a id="user-content-matéria-programação-em-python-7-provas"></a></p>
 <h3 dir="auto">🐍 Matéria: Programação em Python</h3>
-<h3 dir="auto">Precificação da Gasolina Comum (Gasolina C)</h3>
+<span id="prova-py-1-anchor" class="anchor-offset"></span><h3 id="prova-py-1" class="anchor-target" dir="auto">Precificação da Gasolina Comum (Gasolina C)</h3>
 <blockquote>
 <p dir="auto"><strong>Prova 1 - ECR - Guilherme Macario</strong></p>
 <p dir="auto">Faça um programa para calcular o preço final da gasolina comum que chega no posto de combustível.</p>
@@ -1688,7 +1707,7 @@
 <span class="pl-en">print</span>(<span class="pl-s">f"Valor final da gasolina que chega no posto = R$ <span class="pl-s1"><span class="pl-kos">{</span><span class="pl-s1">valor_gasolina_final</span>:.2f<span class="pl-kos">}</span></span>"</span>)</pre></div>
 <hr>
 <p dir="auto"><a id="user-content-fatura-de-energia-elétrica-residencial-tusd--te"></a></p>
-<h3 dir="auto">Fatura de Energia Elétrica Residencial (TUSD / TE)</h3>
+<span id="prova-py-2-anchor" class="anchor-offset"></span><h3 id="prova-py-2" class="anchor-target" dir="auto">Fatura de Energia Elétrica Residencial (TUSD / TE)</h3>
 <blockquote>
 <p dir="auto"><strong>Prova 1 - ECR - Guilherme Macario</strong></p>
 <p dir="auto">Todo mês é feita a leitura do medidor de energia da sua residência para saber qual o consumo em kWh. O consumo mensal é calculado pela diferença entre a leitura do mês atual e a leitura do mês anterior.</p>
@@ -1771,7 +1790,7 @@
 <span class="pl-en">print</span>(<span class="pl-s">f"CIP = R$ <span class="pl-s1"><span class="pl-kos">{</span><span class="pl-s1">cip</span>:.2f<span class="pl-kos">}</span></span>"</span>)
 <span class="pl-en">print</span>(<span class="pl-s">f"Total a pagar (R$) = <span class="pl-s1"><span class="pl-kos">{</span><span class="pl-s1">total_pagar</span>:.2f<span class="pl-kos">}</span></span>"</span>)</pre></div>
 <hr>
-<h3 dir="auto">Cálculo de Médias FIAP com Descarte de Menor Nota e Exame</h3>
+<span id="prova-py-3-anchor" class="anchor-offset"></span><h3 id="prova-py-3" class="anchor-target" dir="auto">Cálculo de Médias FIAP com Descarte de Menor Nota e Exame</h3>
 <blockquote>
 <p dir="auto"><strong>Prova 2 - ECR - Guilherme Macario</strong></p>
 <p dir="auto">Faça um programa para calcular a média final de uma disciplina.</p>
@@ -1863,7 +1882,7 @@ o Global Solutions<br>
 <span class="pl-k">else</span>:
     <span class="pl-en">print</span>(<span class="pl-s">f"Reprovado direto! Média Final = <span class="pl-s1"><span class="pl-kos">{</span><span class="pl-s1">media_parcial</span>:.0f<span class="pl-kos">}</span></span>"</span>)</pre></div>
 <hr>
-<h3 dir="auto">Corretor Automático de Gabarito de Provas</h3>
+<span id="prova-py-4-anchor" class="anchor-offset"></span><h3 id="prova-py-4" class="anchor-target" dir="auto">Corretor Automático de Gabarito de Provas</h3>
 <blockquote>
 <p dir="auto"><strong>Prova 3 - ECR - Guilherme Macario</strong></p>
 <p dir="auto">Faça um programa para verificar a nota do estudante em uma avaliação com 10 questões de múltipla escolha. O programa deve perguntar a resposta de cada questão, comparar com o gabarito da avaliação e calcular a nota total (atribuir 1 ponto para cada resposta correta).</p>
@@ -1945,7 +1964,7 @@ A nota total é igual a 9 ponto (s).</p>
 <span class="pl-s1">pagamento</span> <span class="pl-c1">=</span> <span class="pl-en">float</span>(<span class="pl-en">input</span>(<span class="pl-s">"Valor do pagamento = R$ "</span>))
 <span class="pl-en">print</span>(<span class="pl-s">f"Troco = R$ <span class="pl-s1"><span class="pl-kos">{</span><span class="pl-s1">pagamento</span> <span class="pl-c1">-</span> <span class="pl-s1">total_compra</span>:.2f<span class="pl-kos">}</span></span>"</span>)</pre></div>
 <hr>
-<h3 dir="auto">Jogo Jokenpô Automatizado com Placar</h3>
+<span id="prova-py-5-anchor" class="anchor-offset"></span><h3 id="prova-py-5" class="anchor-target" dir="auto">Jogo Jokenpô Automatizado com Placar</h3>
 <blockquote>
 <p dir="auto"><strong>Prova 4 - ECR - Guilherme Macario</strong></p>
 <p dir="auto">O Jokenpô é um jogo em que as pessoas jogam com as mãos, escolhendo pedra, papel ou tesoura. Funciona assim: a tesoura corta o papel, mas quebra com a pedra; o papel embrulha a pedra, mas é cortado pela tesoura e a pedra quebra a tesoura e é embrulhada pelo papel.</p>
@@ -2000,7 +2019,7 @@ A nota total é igual a 9 ponto (s).</p>
 
 <span class="pl-en">print</span>(<span class="pl-s">f"<span class="pl-cce">\n</span>Placar Final: Jogador <span class="pl-s1"><span class="pl-kos">{</span><span class="pl-s1">vitorias_jogador</span><span class="pl-kos">}</span></span> x <span class="pl-s1"><span class="pl-kos">{</span><span class="pl-s1">vitorias_computador</span><span class="pl-kos">}</span></span> CPU (Empates: <span class="pl-s1"><span class="pl-kos">{</span><span class="pl-s1">empates</span><span class="pl-kos">}</span></span>)"</span>)</pre></div>
 <hr>
-<h3 dir="auto">Jogo da Forca Interativo</h3>
+<span id="prova-py-6-anchor" class="anchor-offset"></span><h3 id="prova-py-6" class="anchor-target" dir="auto">Jogo da Forca Interativo</h3>
 <blockquote>
 <p dir="auto"><strong>Prova 6 - ECR - Guilherme Macario</strong></p>
 <p dir="auto">Elaborar um programa em Python que implemente o Jogo da Forca completo, controlando o número de erros (6 tentativas), revelando as letras acertadas e exibindo o histórico de palpites.</p>
@@ -2039,7 +2058,7 @@ A nota total é igual a 9 ponto (s).</p>
 <hr>
 <h3 dir="auto">🤖 Matéria: Automação e Microcontroladores Arduino (6 Provas em C / C++)</h3>
 <p dir="auto"><a id="user-content-prova-1--índice-de-risco-de-ataques-terroristas-bin-laden"></a></p>
-<h3 dir="auto">Prova 1 — Índice de Risco de Ataques Terroristas (Bin Laden)</h3>
+<span id="prova-ard-1-anchor" class="anchor-offset"></span><h3 id="prova-ard-1" class="anchor-target" dir="auto">Prova 1 — Índice de Risco de Ataques Terroristas (Bin Laden)</h3>
 <blockquote>
 <p dir="auto"><strong>Prova 1 - ECR - Guilherme Macario</strong><br>
 <strong>Aluno: Guilherme Macario da Silva — RM: 84053</strong></p>
@@ -2105,7 +2124,7 @@ A nota total é igual a 9 ponto (s).</p>
 }</pre></div>
 <hr>
 <p dir="auto"><a id="user-content-prova-2--sinalizador-luminoso-de-ambulância-samu"></a></p>
-<h3 dir="auto">Prova 2 — Sinalizador Luminoso de Ambulância SAMU</h3>
+<span id="prova-ard-2-anchor" class="anchor-offset"></span><h3 id="prova-ard-2" class="anchor-target" dir="auto">Prova 2 — Sinalizador Luminoso de Ambulância SAMU</h3>
 <blockquote>
 <p dir="auto"><strong>Prova 2 - ECR - Guilherme Macario</strong><br>
 <strong>Aluno: Guilherme Macario da Silva — RM: 84053</strong></p>
@@ -2208,7 +2227,7 @@ A nota total é igual a 9 ponto (s).</p>
   }
 }</pre></div>
 <hr>
-<h3 dir="auto">Prova 3 — Automação de Esteira Industrial com Aquecimento e Resfriamento</h3>
+<span id="prova-ard-3-anchor" class="anchor-offset"></span><h3 id="prova-ard-3" class="anchor-target" dir="auto">Prova 3 — Automação de Esteira Industrial com Aquecimento e Resfriamento</h3>
 <blockquote>
 <p dir="auto"><strong>Prova 3 - ECR - Guilherme Macario</strong><br>
 Na esteira industrial a peça é colocada na posição dada pelo sensor S1, acionando o motor M1 até o sistema de aquecimento S2 (onde para por 3 segundos). Em seguida, o motor M1 é ligado novamente para conduzir a peça ao resfriamento S3 (aguardando 4 segundos neste estágio). Decorrido este tempo, o motor M1 é acionado para levar a peça até o sensor de saída S4, quando o motor é desligado.</p>
@@ -2262,7 +2281,7 @@ Na esteira industrial a peça é colocada na posição dada pelo sensor S1, acio
   <span class="pl-c1">digitalWrite</span>(<span class="pl-c1">PIN_M1</span>, <span class="pl-c1">LOW</span>);
 }</pre></div>
 <hr>
-<h3 dir="auto">Prova 4 — Contador de Peças Industriais com Alerta de Lotação de Caixa</h3>
+<span id="prova-ard-4-anchor" class="anchor-offset"></span><h3 id="prova-ard-4" class="anchor-target" dir="auto">Prova 4 — Contador de Peças Industriais com Alerta de Lotação de Caixa</h3>
 <blockquote>
 <p dir="auto"><strong>Prova 4 - ECR - Guilherme Macario</strong><br>
 No sistema automatizado, quando uma peça é colocada na posição do sensor S1, o motor M1 é ligado levando a peça até o sensor S2 para descarte na caixa coletora de saída. A caixa suporta até 20 peças. Ao atingir 20 peças, o motor M1 é imediatamente desligado e a lâmpada/LED L1 é acionada, alertando o operador da fábrica para substituição da caixa.</p>
@@ -2314,7 +2333,7 @@ No sistema automatizado, quando uma peça é colocada na posição do sensor S1,
   }
 }</pre></div>
 <hr>
-<h3 dir="auto">Prova 5 — Painel de Operador com Botão de Reset e Reinício de Ciclo</h3>
+<span id="prova-ard-5-anchor" class="anchor-offset"></span><h3 id="prova-ard-5" class="anchor-target" dir="auto">Prova 5 — Painel de Operador com Botão de Reset e Reinício de Ciclo</h3>
 <blockquote>
 <p dir="auto"><strong>Prova 5 - ECR - Guilherme Macario</strong><br>
 Acrescentar ao sistema de esteira o botão B1 no painel do operador para que, após a substituição da caixa cheia, o operador aperte o botão B1 para desligar a lâmpada L1. Neste momento, o contador de peças é zerado e o ciclo operacional se reinicia automaticamente.</p>
@@ -2375,7 +2394,7 @@ Acrescentar ao sistema de esteira o botão B1 no painel do operador para que, ap
   }
 }</pre></div>
 <hr>
-<h3 dir="auto">Prova 6 — Classificador Ótico de Caixas por Altura com Sensores Múltiplos</h3>
+<span id="prova-ard-6-anchor" class="anchor-offset"></span><h3 id="prova-ard-6" class="anchor-target" dir="auto">Prova 6 — Classificador Ótico de Caixas por Altura com Sensores Múltiplos</h3>
 <blockquote>
 <p dir="auto"><strong>Prova 6 - ECR - Guilherme Macario</strong><br>
 Sistema de triagem automática e seleção por altura de caixas em esteira industrial. Quando uma caixa é inserida no sensor S1, o motor M1 é ligado conduzindo a caixa até o sensor de descarregamento S5. Conforme a altura da embalagem, detectada pelos sensores óticos verticais S2, S3 e S4, aciona-se exclusivamente o sinalizador luminoso correspondente (L1 para Caixa Baixa, L2 para Caixa Média, L3 para Caixa Alta), permanecendo aceso até a chegada ao sensor final S5.</p>
@@ -2446,7 +2465,7 @@ Sistema de triagem automática e seleção por altura de caixas em esteira indus
 <strong>Documentação Técnica Oficial:</strong> <a href="https://github.com/Guimemee/fiap-computational-thinking-for-engineering/blob/main/07_Sprints_Challenge_Hospital_Oswaldo_Cruz/docs/Relat%C3%B3rio%20T%C3%A9cnico%20Integrado%20-%20Exoesqueleto%20BCI%20HAOC.pdf" target="_blank" rel="noopener noreferrer">📄 Relatório Técnico Integrado HAOC (PDF)</a> • <a href="https://github.com/Guimemee/fiap-computational-thinking-for-engineering/blob/main/07_Sprints_Challenge_Hospital_Oswaldo_Cruz/docs/Exoskeletons%20Towards%20Industrie%204.0%20Benefits%20and%20Challenges%20of%20the%20IoT.pdf" target="_blank" rel="noopener noreferrer">📚 Referência Internacional Industrie 4.0 IoT (PDF)</a></p>
 </blockquote>
 <p dir="auto"><a id="user-content-sprint-1--proposta-do-challenge-hardware-software-e-cronograma"></a></p>
-<h3 dir="auto">Sprint 1 — Proposta do Challenge, Hardware, Software e Cronograma</h3>
+<span id="sprint-1-anchor" class="anchor-offset"></span><h3 id="sprint-1" class="anchor-target" dir="auto">Sprint 1 — Proposta do Challenge, Hardware, Software e Cronograma</h3>
 <blockquote>
 <p dir="auto"><strong>1. Ideia Consolidada e Objetivo Clínico</strong><br>
 Desenvolver um exoesqueleto robótico de membro superior assistido por Interface Cérebro-Máquina (BMI/BCI) não invasiva, microcontrolado via ESP32, visando a neurorreabilitação motora ativa de pacientes pós-Acidente Vascular Cerebral (AVC) e portadores de lesões neuromusculares no Hospital Alemão Oswaldo Cruz.</p>
@@ -2464,12 +2483,12 @@ Desenvolver um exoesqueleto robótico de membro superior assistido por Interface
 </ul>
 <hr>
 <p dir="auto"><a id="user-content-sprint-2--ideia-consolidada-arquitetura-e-diagrama-de-sistema"></a></p>
-<h3 dir="auto">Sprint 2 — Ideia Consolidada, Arquitetura e Diagrama de Sistema</h3>
+<span id="sprint-2-anchor" class="anchor-offset"></span><h3 id="sprint-2" class="anchor-target" dir="auto">Sprint 2 — Ideia Consolidada, Arquitetura e Diagrama de Sistema</h3>
 <blockquote>
 <p dir="auto"><strong>2. Diagrama de Arquitetura do Sistema (<em>Closed-Loop</em>)</strong><br>
 A arquitetura opera em malha fechada (<em>closed-loop</em>), dividida em quatro camadas funcionais interconectadas:</p>
 </blockquote>
-<section class="js-render-needs-enrichment render-needs-enrichment position-relative" data-identity="6d254edc-775f-4f7d-bc0e-3f24f2714802" data-host="https://viewscreen.githubusercontent.com" data-src="https://viewscreen.githubusercontent.com/markdown/mermaid?docs_host=https%3A%2F%2Fdocs.github.com" data-type="mermaid" aria-label="mermaid rendered output container">
+<section class="js-render-needs-enrichment render-needs-enrichment position-relative" data-identity="5edc5baf-3519-4bbc-8725-c2a49e67a978" data-host="https://viewscreen.githubusercontent.com" data-src="https://viewscreen.githubusercontent.com/markdown/mermaid?docs_host=https%3A%2F%2Fdocs.github.com" data-type="mermaid" aria-label="mermaid rendered output container">
   <div class="js-render-enrichment-target" data-json="{&quot;data&quot;:&quot;graph TD\n    subgraph 1. Camada Neural (BCI)\n        E[Eletrodos Córtex Motor C3/Cz/C4] --&gt; F[Filtro Notch 60Hz + Bandpass 8-30Hz]\n        F --&gt; EXT[Extração de Ondas Mu e Beta]\n        EXT --&gt; S1[Saída: UART / BLE Intenção]\n    end\n\n    subgraph 2. Unidade Central (ESP32)\n        S1 --&gt; FSM[FSM de Controle de Estado e Segurança]\n        FSM --&gt; STEP[Geração de Pulsos STEP / DIR]\n        ENC[Encoders AS5600 + Fim-de-Curso] --&gt; FSM\n    end\n\n    subgraph 3. Potência Mecânica\n        STEP --&gt; DRV[Driver Silencioso TMC2208]\n        DRV --&gt; MOT[Motor de Passo NEMA 23]\n        MOT --&gt; RED[Redução Epicicloidal 1:10]\n        RED --&gt; ORT[Órtese / Junta Articular (4.8 N·m)]\n    end\n\n    subgraph 4. Telemetria Médica\n        FSM --&gt; GTW[Gateway Wi-Fi HTTPS / TLS 1.3]\n        GTW --&gt; JSON[Formato HL7 / FHIR JSON]\n        JSON --&gt; DASH[Dashboard Fisioterapeuta HAOC]\n        DASH --&gt; PRONT[Prontuário Oswaldo Cruz]\n    end\n&quot;}" data-plain="graph TD
     subgraph 1. Camada Neural (BCI)
         E[Eletrodos Córtex Motor C3/Cz/C4] --&gt; F[Filtro Notch 60Hz + Bandpass 8-30Hz]
@@ -2546,7 +2565,7 @@ A arquitetura opera em malha fechada (<em>closed-loop</em>), dividida em quatro 
 </ul>
 <hr>
 <p dir="auto"><a id="user-content-sprint-3--custo-de-desenvolvimento-e-protótipo-de-engenharia"></a></p>
-<h3 dir="auto">Sprint 3 — Custo de Desenvolvimento e Protótipo de Engenharia</h3>
+<span id="sprint-3-anchor" class="anchor-offset"></span><h3 id="sprint-3" class="anchor-target" dir="auto">Sprint 3 — Custo de Desenvolvimento e Protótipo de Engenharia</h3>
 <blockquote>
 <p dir="auto"><strong>3. Engenharia, Dimensionamento Orçamentário e Custos (BOM)</strong><br>
 <strong>Status:</strong> APROVADO SPRINT 3 CTE ✅</p>
@@ -2637,7 +2656,7 @@ Implementação em C/C++ FreeRTOS com interrupção de emergência IRAM_ATTR e d
 </ul>
 <hr>
 <p dir="auto"><a id="user-content-sprint-4--relatório-final-integrado-e-conclusão"></a></p>
-<h3 dir="auto">Sprint 4 — Relatório Final Integrado e Conclusão</h3>
+<span id="sprint-4-anchor" class="anchor-offset"></span><h3 id="sprint-4" class="anchor-target" dir="auto">Sprint 4 — Relatório Final Integrado e Conclusão</h3>
 <blockquote>
 <p dir="auto"><strong>4. Cronograma Anual Consolidado e Conclusão Executiva</strong><br>
 <strong>Status:</strong> CICLO ANUAL COMPLETO VALIDADO ✅</p>
@@ -2709,7 +2728,7 @@ Implementação em C/C++ FreeRTOS com interrupção de emergência IRAM_ATTR e d
 <h2 dir="auto">4. Exercícios Práticos de Laboratório</h2>
 <h3 dir="auto">🐍 Matéria: Programação em Python</h3>
 <p dir="auto"><a id="user-content-1-estruturas-sequenciais-variáveis-e-operações-aritméticas"></a></p>
-<h4 dir="auto">Módulo 1: Estruturas Sequenciais, Variáveis e Operações Aritméticas</h4>
+<span id="modulo-1-anchor" class="anchor-offset"></span><h4 id="modulo-1" class="anchor-target" dir="auto">Módulo 1: Estruturas Sequenciais, Variáveis e Operações Aritméticas</h4>
 <h3 dir="auto">Identificação do Estudante e RM</h3>
 <blockquote>
 <p dir="auto">Faça um programa que mostre seu nome completo na tela e seu RM da FIAP.</p>
@@ -2762,7 +2781,7 @@ Implementação em C/C++ FreeRTOS com interrupção de emergência IRAM_ATTR e d
 <hr>
 <h3 dir="auto">Cálculo do Volume de uma Esfera</h3>
 <blockquote>
-<p dir="auto">Elabore um programa em Python com uma função que recebe o raio de uma esfera e calcula o seu volume (<math-renderer class="js-inline-math" style="display: inline-block" data-run-id="0bebe8c03675883e6d45414619c3eb3c">$v = rac{4}{3}\pi R^3$</math-renderer>).</p>
+<p dir="auto">Elabore um programa em Python com uma função que recebe o raio de uma esfera e calcula o seu volume (<math-renderer class="js-inline-math" style="display: inline-block" data-run-id="569e7595f7744c9063308d6113b9ad9c">$v = rac{4}{3}\pi R^3$</math-renderer>).</p>
 </blockquote>
 <h4 dir="auto">Link do Código:</h4>
 <ul dir="auto">
@@ -2813,7 +2832,7 @@ Implementação em C/C++ FreeRTOS com interrupção de emergência IRAM_ATTR e d
 <hr>
 <h3 dir="auto">Cálculo do Peso Ideal por Altura e Sexo</h3>
 <blockquote>
-<p dir="auto">Elabore um programa em Python com uma função que recebe a altura (alt) e o sexo de uma pessoa e retorna o seu peso ideal. Para homens: <math-renderer class="js-inline-math" style="display: inline-block" data-run-id="0bebe8c03675883e6d45414619c3eb3c">$72.7 	imes 	ext{alt} - 58$</math-renderer>. Para mulheres: <math-renderer class="js-inline-math" style="display: inline-block" data-run-id="0bebe8c03675883e6d45414619c3eb3c">$62.1 	imes 	ext{alt} - 44.7$</math-renderer>.</p>
+<p dir="auto">Elabore um programa em Python com uma função que recebe a altura (alt) e o sexo de uma pessoa e retorna o seu peso ideal. Para homens: <math-renderer class="js-inline-math" style="display: inline-block" data-run-id="569e7595f7744c9063308d6113b9ad9c">$72.7 	imes 	ext{alt} - 58$</math-renderer>. Para mulheres: <math-renderer class="js-inline-math" style="display: inline-block" data-run-id="569e7595f7744c9063308d6113b9ad9c">$62.1 	imes 	ext{alt} - 44.7$</math-renderer>.</p>
 </blockquote>
 <h4 dir="auto">Link do Código:</h4>
 <ul dir="auto">
@@ -2834,7 +2853,7 @@ Implementação em C/C++ FreeRTOS com interrupção de emergência IRAM_ATTR e d
 <span class="pl-en">print</span>(<span class="pl-s">f"Peso ideal calculado: <span class="pl-s1"><span class="pl-kos">{</span><span class="pl-en">peso_ideal</span>(<span class="pl-s1">alt</span>, <span class="pl-s1">sexo</span>):.2f<span class="pl-kos">}</span></span> kg"</span>)</pre></div>
 <hr>
 <p dir="auto"><a id="user-content-2-estruturas-de-decisão-e-desvios-condicionais-if--elif--else"></a></p>
-<h4 dir="auto">Módulo 2: Estruturas de Decisão e Desvios Condicionais (if / elif / else)</h4>
+<span id="modulo-2-anchor" class="anchor-offset"></span><h4 id="modulo-2" class="anchor-target" dir="auto">Módulo 2: Estruturas de Decisão e Desvios Condicionais (if / elif / else)</h4>
 <h3 dir="auto">Verificação de Número Positivo</h3>
 <blockquote>
 <p dir="auto">Crie um programa com uma função que receba um valor e informe se ele é positivo ou não.</p>
@@ -3069,7 +3088,7 @@ Implementação em C/C++ FreeRTOS com interrupção de emergência IRAM_ATTR e d
 <span class="pl-en">print</span>(<span class="pl-s">f"Duração: <span class="pl-s1"><span class="pl-kos">{</span><span class="pl-s1">dur</span><span class="pl-kos">}</span></span> minutos (<span class="pl-s1"><span class="pl-kos">{</span><span class="pl-s1">dur</span> <span class="pl-c1">//</span> <span class="pl-c1">60</span><span class="pl-kos">}</span></span>h <span class="pl-s1"><span class="pl-kos">{</span><span class="pl-s1">dur</span> <span class="pl-c1">%</span> <span class="pl-c1">60</span><span class="pl-kos">}</span></span>min)"</span>)</pre></div>
 <hr>
 <p dir="auto"><a id="user-content-3-estruturas-de-repetição-e-laços-for--while"></a></p>
-<h4 dir="auto">Módulo 3: Estruturas de Repetição e Laços (for / while)</h4>
+<span id="modulo-3-anchor" class="anchor-offset"></span><h4 id="modulo-3" class="anchor-target" dir="auto">Módulo 3: Estruturas de Repetição e Laços (for / while)</h4>
 <h3 dir="auto">Simulação de Monte Carlo: 1 Milhão de Lançamentos de Dado</h3>
 <blockquote>
 <p dir="auto">Lance o dado 1 milhão de vezes com a função <code class="notranslate">Dado()</code>. Conte quantas vezes cada número saiu e analise a distribuição probabilística empírica em relação à probabilidade teórica (16.67%).</p>
@@ -3175,11 +3194,11 @@ Implementação em C/C++ FreeRTOS com interrupção de emergência IRAM_ATTR e d
 <span class="pl-en">print</span>(<span class="pl-s">f"Maior: <span class="pl-s1"><span class="pl-kos">{</span><span class="pl-s1">maior</span><span class="pl-kos">}</span></span> | Menor: <span class="pl-s1"><span class="pl-kos">{</span><span class="pl-s1">menor</span><span class="pl-kos">}</span></span>"</span>)</pre></div>
 <hr>
 <p dir="auto"><a id="user-content-4-funções-modulares-e-algoritmos-matemáticos-def"></a></p>
-<h4 dir="auto">Módulo 4: Funções Modulares e Algoritmos Matemáticos (def)</h4>
+<span id="modulo-4-anchor" class="anchor-offset"></span><h4 id="modulo-4" class="anchor-target" dir="auto">Módulo 4: Funções Modulares e Algoritmos Matemáticos (def)</h4>
 <p dir="auto"><a id="user-content-cálculo-do-discriminante-delta-de-equação-do-2º-grau"></a></p>
 <h3 dir="auto">Cálculo do Discriminante Δ de Equação do 2º Grau</h3>
 <blockquote>
-<p dir="auto">Crie um programa com uma função que receba três valores ('a', 'b', 'c') e retorne o valor de <math-renderer class="js-inline-math" style="display: inline-block" data-run-id="0bebe8c03675883e6d45414619c3eb3c">$\Delta$</math-renderer> (<math-renderer class="js-inline-math" style="display: inline-block" data-run-id="0bebe8c03675883e6d45414619c3eb3c">$b^2 - 4ac$</math-renderer>).</p>
+<p dir="auto">Crie um programa com uma função que receba três valores ('a', 'b', 'c') e retorne o valor de <math-renderer class="js-inline-math" style="display: inline-block" data-run-id="569e7595f7744c9063308d6113b9ad9c">$\Delta$</math-renderer> (<math-renderer class="js-inline-math" style="display: inline-block" data-run-id="569e7595f7744c9063308d6113b9ad9c">$b^2 - 4ac$</math-renderer>).</p>
 </blockquote>
 <h4 dir="auto">Link do Código:</h4>
 <ul dir="auto">
@@ -3196,7 +3215,7 @@ Implementação em C/C++ FreeRTOS com interrupção de emergência IRAM_ATTR e d
 <hr>
 <h3 dir="auto">Resolução da Equação do 2º Grau (Raízes Reais e Complexas)</h3>
 <blockquote>
-<p dir="auto">Crie um programa que calcula as raízes de uma equação do 2º grau (<math-renderer class="js-inline-math" style="display: inline-block" data-run-id="0bebe8c03675883e6d45414619c3eb3c">$ax^2 + bx + c = 0$</math-renderer>). Se <math-renderer class="js-inline-math" style="display: inline-block" data-run-id="0bebe8c03675883e6d45414619c3eb3c">$\Delta \ge 0$</math-renderer>, raízes reais; se <math-renderer class="js-inline-math" style="display: inline-block" data-run-id="0bebe8c03675883e6d45414619c3eb3c">$\Delta &amp;lt; 0$</math-renderer>, raízes complexas da forma <math-renderer class="js-inline-math" style="display: inline-block" data-run-id="0bebe8c03675883e6d45414619c3eb3c">$x + iy$</math-renderer>.</p>
+<p dir="auto">Crie um programa que calcula as raízes de uma equação do 2º grau (<math-renderer class="js-inline-math" style="display: inline-block" data-run-id="569e7595f7744c9063308d6113b9ad9c">$ax^2 + bx + c = 0$</math-renderer>). Se <math-renderer class="js-inline-math" style="display: inline-block" data-run-id="569e7595f7744c9063308d6113b9ad9c">$\Delta \ge 0$</math-renderer>, raízes reais; se <math-renderer class="js-inline-math" style="display: inline-block" data-run-id="569e7595f7744c9063308d6113b9ad9c">$\Delta &amp;lt; 0$</math-renderer>, raízes complexas da forma <math-renderer class="js-inline-math" style="display: inline-block" data-run-id="569e7595f7744c9063308d6113b9ad9c">$x + iy$</math-renderer>.</p>
 </blockquote>
 <h4 dir="auto">Link do Código:</h4>
 <ul dir="auto">
@@ -3411,7 +3430,7 @@ Implementação em C/C++ FreeRTOS com interrupção de emergência IRAM_ATTR e d
 <hr>
 <h3 dir="auto">Somatório de 1 até N</h3>
 <blockquote>
-<p dir="auto">Recebe um valor positivo N e retorna o somatório <math-renderer class="js-inline-math" style="display: inline-block" data-run-id="0bebe8c03675883e6d45414619c3eb3c">$1 + 2 + ... + N$</math-renderer>.</p>
+<p dir="auto">Recebe um valor positivo N e retorna o somatório <math-renderer class="js-inline-math" style="display: inline-block" data-run-id="569e7595f7744c9063308d6113b9ad9c">$1 + 2 + ... + N$</math-renderer>.</p>
 </blockquote>
 <h4 dir="auto">Link do Código:</h4>
 <ul dir="auto">
@@ -3441,7 +3460,7 @@ Implementação em C/C++ FreeRTOS com interrupção de emergência IRAM_ATTR e d
 <p dir="auto"><a id="user-content-série-de-euler-s--1--11--12----1n"></a></p>
 <h3 dir="auto">Série de Euler S = 1 + 1/1! + 1/2! + ... + 1/N!</h3>
 <blockquote>
-<p dir="auto">Recebe N e calcula a aproximação do número de Euler <math-renderer class="js-inline-math" style="display: inline-block" data-run-id="0bebe8c03675883e6d45414619c3eb3c">$e$</math-renderer> por somatório com fatoriais.</p>
+<p dir="auto">Recebe N e calcula a aproximação do número de Euler <math-renderer class="js-inline-math" style="display: inline-block" data-run-id="569e7595f7744c9063308d6113b9ad9c">$e$</math-renderer> por somatório com fatoriais.</p>
 </blockquote>
 <h4 dir="auto">Link do Código:</h4>
 <ul dir="auto">
@@ -3457,7 +3476,7 @@ Implementação em C/C++ FreeRTOS com interrupção de emergência IRAM_ATTR e d
 <hr>
 <h3 dir="auto">Exponenciação Manual X elevado a Z</h3>
 <blockquote>
-<p dir="auto">Recebe dois valores X e Z e calcula <math-renderer class="js-inline-math" style="display: inline-block" data-run-id="0bebe8c03675883e6d45414619c3eb3c">$X^Z$</math-renderer> utilizando apenas laço de repetição.</p>
+<p dir="auto">Recebe dois valores X e Z e calcula <math-renderer class="js-inline-math" style="display: inline-block" data-run-id="569e7595f7744c9063308d6113b9ad9c">$X^Z$</math-renderer> utilizando apenas laço de repetição.</p>
 </blockquote>
 <h4 dir="auto">Link do Código:</h4>
 <ul dir="auto">
@@ -3476,7 +3495,7 @@ Implementação em C/C++ FreeRTOS com interrupção de emergência IRAM_ATTR e d
 <span class="pl-en">print</span>(<span class="pl-s">f"<span class="pl-s1"><span class="pl-kos">{</span><span class="pl-s1">x</span><span class="pl-kos">}</span></span>^<span class="pl-s1"><span class="pl-kos">{</span><span class="pl-s1">z</span><span class="pl-kos">}</span></span> = <span class="pl-s1"><span class="pl-kos">{</span><span class="pl-en">potencia_manual</span>(<span class="pl-s1">x</span>, <span class="pl-s1">z</span>)<span class="pl-kos">}</span></span>"</span>)</pre></div>
 <hr>
 <p dir="auto"><a id="user-content-5-estruturas-de-dados-listas-e-dicionários"></a></p>
-<h4 dir="auto">Módulo 5: Estruturas de Dados (Listas e Dicionários)</h4>
+<span id="modulo-5-anchor" class="anchor-offset"></span><h4 id="modulo-5" class="anchor-target" dir="auto">Módulo 5: Estruturas de Dados (Listas e Dicionários)</h4>
 <h3 dir="auto">Sistema de Cadastro e Gestão de Estoque com Dicionários</h3>
 <blockquote>
 <p dir="auto">Implementar um sistema de gerenciamento e cadastro de produtos em Python utilizando Dicionários e Listas (<code class="notranslate">dict</code> e <code class="notranslate">list</code>), com código, nome, preço, quantidade, cálculo do valor total de estoque e busca indexada.</p>
@@ -3520,7 +3539,7 @@ Implementação em C/C++ FreeRTOS com interrupção de emergência IRAM_ATTR e d
 <hr>
 <p dir="auto"><a id="user-content-6-automação-e-microcontroladores-arduino-c"></a></p>
 <h3 dir="auto">🤖 Matéria: Automação e Microcontroladores (Arduino C++) — Projetos de Laboratório</h3>
-<h3 dir="auto">Projeto 1 — LED Pisca Pisca (Laboratório Básico de Hardware)</h3>
+<span id="projeto-1-anchor" class="anchor-offset"></span><h3 id="projeto-1" class="anchor-target" dir="auto">Projeto 1 — LED Pisca Pisca (Laboratório Básico de Hardware)</h3>
 <div align="center" dir="auto">
   <a target="_blank" rel="noopener noreferrer" href="./assets/arduino_images/arduino_page_1_Image9.png"><img src="./assets/arduino_images/arduino_page_1_Image9.png" alt="Diagrama Fritzing do Projeto 1 - LED Pisca Pisca" width="460" style="max-width: 100%;"></a>
   <br>
@@ -3579,7 +3598,7 @@ Implementação em C/C++ FreeRTOS com interrupção de emergência IRAM_ATTR e d
   <span class="pl-k">while</span>(<span class="pl-c1">1</span>);
 }</pre></div>
 <hr>
-<h3 dir="auto">Projeto 2 — LED Pisca Pisca com Delay Decremental</h3>
+<span id="projeto-2-anchor" class="anchor-offset"></span><h3 id="projeto-2" class="anchor-target" dir="auto">Projeto 2 — LED Pisca Pisca com Delay Decremental</h3>
 <div align="center" dir="auto">
   <a target="_blank" rel="noopener noreferrer" href="./assets/arduino_images/arduino_page_3_Image18.jpg"><img src="./assets/arduino_images/arduino_page_3_Image18.jpg" alt="Diagrama Fritzing do Projeto 2 - Delay Decremental" width="460" style="max-width: 100%;"></a>
   <br>
@@ -3634,7 +3653,7 @@ Implementação em C/C++ FreeRTOS com interrupção de emergência IRAM_ATTR e d
   <span class="pl-c1">digitalWrite</span>(<span class="pl-c1">LED_VERMELHO</span>, <span class="pl-c1">HIGH</span>); <span class="pl-c1">delay</span>(<span class="pl-c1">5000</span>); <span class="pl-c1">digitalWrite</span>(<span class="pl-c1">LED_VERMELHO</span>, <span class="pl-c1">LOW</span>);
 }</pre></div>
 <hr>
-<h3 dir="auto">Projeto 3 — Luz Pulsante (Modulação PWM Incremental)</h3>
+<span id="projeto-3-anchor" class="anchor-offset"></span><h3 id="projeto-3" class="anchor-target" dir="auto">Projeto 3 — Luz Pulsante (Modulação PWM Incremental)</h3>
 <div align="center" dir="auto">
   <a target="_blank" rel="noopener noreferrer" href="./assets/arduino_images/arduino_page_5_Image26.png"><img src="./assets/arduino_images/arduino_page_5_Image26.png" alt="Diagrama Fritzing do Projeto 3 - Luz Pulsante PWM" width="460" style="max-width: 100%;"></a>
   <br>
@@ -3694,7 +3713,7 @@ Implementação em C/C++ FreeRTOS com interrupção de emergência IRAM_ATTR e d
   }
 }</pre></div>
 <hr>
-<h3 dir="auto">Projeto 4 — Meu Primeiro Botão (Pushbutton &amp; Chave Tátil)</h3>
+<span id="projeto-4-anchor" class="anchor-offset"></span><h3 id="projeto-4" class="anchor-target" dir="auto">Projeto 4 — Meu Primeiro Botão (Pushbutton &amp; Chave Tátil)</h3>
 <div align="center" dir="auto">
   <a target="_blank" rel="noopener noreferrer" href="./assets/arduino_images/arduino_page_7_Image36.png"><img src="./assets/arduino_images/arduino_page_7_Image36.png" alt="Diagrama Fritzing do Projeto 4 - Pushbutton" width="460" style="max-width: 100%;"></a>
   <br>
@@ -3751,7 +3770,7 @@ Implementação em C/C++ FreeRTOS com interrupção de emergência IRAM_ATTR e d
   <span class="pl-c1">delay</span>(<span class="pl-c1">50</span>);
 }</pre></div>
 <hr>
-<h3 dir="auto">Projeto 5 — LED Controlado por Potenciômetro (Entrada Analógica A5)</h3>
+<span id="projeto-5-anchor" class="anchor-offset"></span><h3 id="projeto-5" class="anchor-target" dir="auto">Projeto 5 — LED Controlado por Potenciômetro (Entrada Analógica A5)</h3>
 <div align="center" dir="auto">
   <a target="_blank" rel="noopener noreferrer" href="./assets/arduino_images/arduino_page_10_Image48.png"><img src="./assets/arduino_images/arduino_page_10_Image48.png" alt="Diagrama Fritzing do Projeto 5 - Potenciômetro" width="460" style="max-width: 100%;"></a>
   <br>
@@ -3795,7 +3814,7 @@ Implementação em C/C++ FreeRTOS com interrupção de emergência IRAM_ATTR e d
   <span class="pl-c1">delay</span>(<span class="pl-c1">1000</span>);
 }</pre></div>
 <hr>
-<h3 dir="auto">Projeto 6 — LED Inteligente com Sensor LDR</h3>
+<span id="projeto-6-anchor" class="anchor-offset"></span><h3 id="projeto-6" class="anchor-target" dir="auto">Projeto 6 — LED Inteligente com Sensor LDR</h3>
 <div align="center" dir="auto">
   <a target="_blank" rel="noopener noreferrer" href="./assets/arduino_images/arduino_page_12_Image56.png"><img src="./assets/arduino_images/arduino_page_12_Image56.png" alt="Diagrama Fritzing do Projeto 6 - Sensor LDR" width="460" style="max-width: 100%;"></a>
   <br>
@@ -3848,7 +3867,7 @@ Implementação em C/C++ FreeRTOS com interrupção de emergência IRAM_ATTR e d
   }
 }</pre></div>
 <hr>
-<h3 dir="auto">Projeto 7 — Calibrando o LED Inteligente via Monitor Serial</h3>
+<span id="projeto-7-anchor" class="anchor-offset"></span><h3 id="projeto-7" class="anchor-target" dir="auto">Projeto 7 — Calibrando o LED Inteligente via Monitor Serial</h3>
 <div align="center" dir="auto">
   <a target="_blank" rel="noopener noreferrer" href="./assets/arduino_images/arduino_page_14_Image64.png"><img src="./assets/arduino_images/arduino_page_14_Image64.png" alt="Diagrama Fritzing do Projeto 7 - Calibração LDR Serial" width="460" style="max-width: 100%;"></a>
   <br>
@@ -3906,7 +3925,7 @@ Implementação em C/C++ FreeRTOS com interrupção de emergência IRAM_ATTR e d
 }</pre></div>
 <hr>
 <p dir="auto"><a id="user-content-automação-de-circuitos-e-controle-de-leds-com-arduino"></a></p>
-<h3 dir="auto">Projeto 8 — LEDs Controlados pelo Teclado via Porta Serial</h3>
+<span id="projeto-8-anchor" class="anchor-offset"></span><h3 id="projeto-8" class="anchor-target" dir="auto">Projeto 8 — LEDs Controlados pelo Teclado via Porta Serial</h3>
 <div align="center" dir="auto">
   <a target="_blank" rel="noopener noreferrer" href="./assets/arduino_images/arduino_page_16_Image72.png"><img src="./assets/arduino_images/arduino_page_16_Image72.png" alt="Diagrama Fritzing do Projeto 8 - Controle via Teclado" width="460" style="max-width: 100%;"></a>
   <br>
