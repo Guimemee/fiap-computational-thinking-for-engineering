@@ -1,6 +1,12 @@
 # 💻 FIAP • Engenharia da Computação
 ### Portfólio Acadêmico e Repositório Oficial de Engenharia • Computational Thinking for Engineering (2022)
 
+<p align="center">
+  <a href="https://guimemee.github.io/fiap-computational-thinking-for-engineering/">
+    <img src="https://img.shields.io/badge/🌐_Acessar_Site_Oficial-GitHub_Pages-238636?style=for-the-badge&logo=githubpages&logoColor=white" alt="Acessar Site Oficial no GitHub Pages">
+  </a>
+</p>
+
 <table>
   <!-- Bloco 1: Informações Pessoais (Card Duplo) -->
   <tr>
